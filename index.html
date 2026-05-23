@@ -1,442 +1,1333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnab Jana — Portfolio</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0d0d0f;--bg2:#141416;--bg3:#1a1a1d;--card:#1e1e22;--border:#2a2a30;--accent:#7c6ef2;--accent2:#5dcaa5;--text:#e8e8f0;--muted:#8888a0;--link:#a89cf5}
-body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;font-size:16px}
-a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
-.container{max-width:860px;margin:0 auto;padding:0 24px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnab Jana — Portfolio</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset & Theme Setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-/* NAV */
-nav{position:sticky;top:0;background:rgba(13,13,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:14px 0}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:860px;margin:0 auto;padding:0 24px}
-.nav-logo{font-weight:700;font-size:18px;color:var(--text)}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{color:var(--muted);font-size:14px;transition:color 0.2s}.nav-links a:hover{color:var(--text);text-decoration:none}
+    :root {
+      --bg: #05070f;
+      --card-bg: rgba(13, 17, 30, 0.45);
+      --card-border: rgba(255, 255, 255, 0.06);
+      --card-border-hover: rgba(99, 102, 241, 0.35);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #6366f1; /* Indigo */
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --accent2: #14b8a6; /* Teal */
+      --accent2-glow: rgba(20, 184, 166, 0.15);
+      --accent3: #ec4899; /* Pink */
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
 
-/* HERO */
-.hero{padding:80px 0 60px;border-bottom:1px solid var(--border)}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:13px;color:var(--accent2);margin-bottom:24px}
-.hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent2)}
-h1{font-size:52px;font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px}
-h1 span{color:var(--accent)}
-.hero-sub{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:32px}
-.hero-links{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:500;transition:all 0.2s;cursor:pointer;border:none}
-.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#6a5ce0;text-decoration:none}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}.btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-.hero-meta{display:flex;gap:24px;margin-top:40px;flex-wrap:wrap}
-.meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
-.meta-item svg{width:16px;height:16px;stroke:var(--accent2)}
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* SECTIONS */
-section{padding:60px 0;border-bottom:1px solid var(--border)}
-.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-.section-title{font-size:28px;font-weight:700;margin-bottom:32px;letter-spacing:-0.5px}
+    /* Selection Highlight */
+    ::selection {
+      background: rgba(99, 102, 241, 0.3);
+      color: #fff;
+    }
 
-/* ABOUT */
-.about-text{font-size:17px;color:var(--muted);line-height:1.8;max-width:640px}
-.about-text strong{color:var(--text)}
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      border: 2px solid var(--bg);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.skill-group{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px}
-.skill-group-title{font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
-.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:12px;color:var(--muted)}
+    /* Container Utility */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-/* PROJECTS */
-.projects-grid{display:grid;gap:16px}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color 0.2s}
-.project-card:hover{border-color:var(--accent)}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:12px}
-.project-name{font-size:18px;font-weight:700}
-.project-links{display:flex;gap:8px;flex-shrink:0}
-.icon-btn{width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.2s;color:var(--muted)}
-.icon-btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-.project-desc{color:var(--muted);font-size:14px;margin-bottom:14px;line-height:1.7}
-.project-bullets{list-style:none;margin-bottom:14px}
-.project-bullets li{font-size:13px;color:var(--muted);padding:3px 0;padding-left:14px;position:relative}
-.project-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent)}
-.project-tools{display:flex;flex-wrap:wrap;gap:6px}
-.tool-tag{background:rgba(124,110,242,0.1);border:1px solid rgba(124,110,242,0.25);border-radius:6px;padding:3px 10px;font-size:12px;color:var(--accent)}
+    /* STICKY GLASS NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(5, 7, 15, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 100;
+      padding: 18px 0;
+      transition: all 0.3s ease;
+    }
 
-/* EXPERIENCE */
-.exp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
-.exp-company{font-size:18px;font-weight:700}
-.exp-date{font-size:13px;color:var(--muted)}
-.exp-role{font-size:14px;color:var(--accent2);margin-bottom:14px}
-.exp-bullets{list-style:none}
-.exp-bullets li{font-size:14px;color:var(--muted);padding:4px 0;padding-left:14px;position:relative}
-.exp-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent)}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-/* EDUCATION */
-.edu-grid{display:grid;gap:12px}
-.edu-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.edu-deg{font-weight:600;font-size:15px}
-.edu-inst{font-size:13px;color:var(--muted);margin-top:2px}
-.edu-right{text-align:right;flex-shrink:0}
-.edu-result{font-size:15px;font-weight:700;color:var(--accent2)}
-.edu-year{font-size:12px;color:var(--muted);margin-top:2px}
+    .nav-logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-/* ACHIEVEMENTS */
-.ach-list{display:grid;gap:12px}
-.ach-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:14px}
-.ach-icon{width:36px;height:36px;background:rgba(93,202,165,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ach-icon svg{width:18px;height:18px;stroke:var(--accent2)}
-.ach-text{font-size:14px;color:var(--muted);line-height:1.6}
+    .nav-logo span {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.contact-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:12px;transition:border-color 0.2s}
-.contact-item:hover{border-color:var(--accent);text-decoration:none}
-.contact-icon{width:36px;height:36px;background:var(--bg3);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-icon svg{width:18px;height:18px;stroke:var(--accent)}
-.contact-label{font-size:12px;color:var(--muted)}
-.contact-value{font-size:14px;color:var(--text);font-weight:500}
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
 
-footer{padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      position: relative;
+      padding: 4px 0;
+    }
 
-@media(max-width:600px){h1{font-size:36px}.hero{padding:50px 0 40px}.project-header{flex-direction:column}.edu-card{flex-direction:column}.edu-right{text-align:left}}
-</style>
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(20, 184, 166, 0.06);
+      border: 1px solid rgba(20, 184, 166, 0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 28px;
+      animation: pulse-border 3s infinite;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 8px var(--accent2);
+    }
+
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--accent) 30%, #818cf8 60%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.45);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Metadata Grid */
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .meta-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent2);
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .meta-item strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* SECTION BASICS */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--card-border);
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--accent2);
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 40px;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+
+    /* Glassmorphism Card Style */
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.05);
+    }
+
+    /* ABOUT & STATS */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .about-text strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .stats-card {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent2);
+    }
+
+    /* SKILLS GRID */
+    .skills-section {
+      margin-top: 48px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-group {
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .skill-group-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-group-title::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .skill-group:nth-child(2n) .skill-group-title::before {
+      background: var(--accent2);
+      box-shadow: 0 0 6px var(--accent2);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: rgba(99, 102, 241, 0.08);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* PROJECTS SECTIONS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .project-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .icon-btn:hover {
+      border-color: var(--accent);
+      color: #fff;
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .project-bullets {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .project-bullets li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .project-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-weight: bold;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .tool-tag {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #a5b4fc;
+    }
+
+    /* TIMELINE (Experience & Education) */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      border-color: var(--accent2);
+      box-shadow: 0 0 8px var(--accent2);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.3);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .exp-company {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .exp-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .exp-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 16px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: '↳';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* EDUCATION CARDS GRID */
+    .edu-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .edu-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .edu-deg {
+      font-weight: 700;
+      font-size: 17px;
+      color: #fff;
+    }
+
+    .edu-inst {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .edu-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .edu-result {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent2);
+    }
+
+    .edu-year {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ACHIEVEMENTS */
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .ach-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .ach-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(20, 184, 166, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent2);
+    }
+
+    .ach-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent2);
+      stroke-width: 2;
+    }
+
+    .ach-card:nth-child(2) .ach-icon {
+      background: rgba(99, 102, 241, 0.08);
+      color: var(--accent);
+    }
+    .ach-card:nth-child(2) .ach-icon svg {
+      stroke: var(--accent);
+    }
+
+    .ach-card:nth-child(3) .ach-icon {
+      background: rgba(236, 72, 153, 0.08);
+      color: var(--accent3);
+    }
+    .ach-card:nth-child(3) .ach-icon svg {
+      stroke: var(--accent3);
+    }
+
+    .ach-text {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* CONTACT GRID */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover .contact-icon {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .contact-card:nth-child(2):hover .contact-icon {
+      background: var(--accent2-glow);
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    footer a {
+      color: var(--accent2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Keyframes */
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
+      }
+    }
+
+    /* RESPONSIVE LAYOUT */
+    @media (max-width: 868px) {
+      h1 {
+        font-size: 48px;
+      }
+      .hero {
+        padding: 80px 0 60px;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .stats-card {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+      }
+      .nav-links {
+        display: none; /* simple fallback for simplicity */
+      }
+      .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .edu-right {
+        text-align: left;
+      }
+      .stats-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <span class="nav-logo">AJ</span>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container">
-
-  <section class="hero">
-    <div class="hero-badge">Open to internships & full-time roles</div>
-    <h1>Arnab <span>Jana</span></h1>
-    <p class="hero-sub">Computer Science student specializing in IoT, Cybersecurity & Blockchain. Building secure systems, full-stack apps, and AI tools.</p>
-    <div class="hero-links">
-      <a class="btn btn-primary" href="https://github.com/Arnab0513" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">LinkedIn</a>
-      <a class="btn btn-ghost" href="mailto:arnab.jana2228@gmail.com">Email Me</a>
-    </div>
-    <div class="hero-meta">
-      <div class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-        Kolkata, India
-      </div>
-      <div class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
-        IEM Kolkata · B.Tech CSE · 3rd Year
-      </div>
-      <div class="meta-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-        +91 8317842228
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <p class="section-label">About</p>
-    <h2 class="section-title">Who I am</h2>
-    <p class="about-text">
-      I'm a <strong>third-year Computer Science student</strong> at IEM Kolkata, specializing in <strong>IoT, Cybersecurity, and Blockchain Technology</strong>. I've built five independent projects ranging from honeypot systems to tamper-evident logging chains, and contributed to one group project on cybersecurity monitoring.<br><br>
-      I completed a <strong>3-month remote internship at Infosys</strong> working on a machine learning real estate analytics project under Agile sprints. I'm comfortable across full-stack development, application security, and data pipelines.
-    </p>
-    <div class="skills-grid" style="margin-top:32px">
-      <div class="skill-group">
-        <div class="skill-group-title">Languages</div>
-        <div class="skill-tags">
-          <span class="tag">Python</span><span class="tag">C</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Cybersecurity</div>
-        <div class="skill-tags">
-          <span class="tag">OWASP Top 10</span><span class="tag">SQL Injection</span><span class="tag">XSS Prevention</span><span class="tag">Honeypot Design</span><span class="tag">Intrusion Detection</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">AI / ML</div>
-        <div class="skill-tags">
-          <span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">NLP</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Web & Tools</div>
-        <div class="skill-tags">
-          <span class="tag">Flask</span><span class="tag">REST APIs</span><span class="tag">Chart.js</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Agile</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <p class="section-label">Projects</p>
-    <h2 class="section-title">Things I've built</h2>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">TaskFlow — Secure Task Management</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/TaskFlow-Secure-Task-Management-System" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">A full-stack task management web app with role-based access control and OWASP-compliant authentication.</p>
-        <ul class="project-bullets">
-          <li>Two API-enforced user roles: admins manage/assign tasks, users access only their own records</li>
-          <li>One-time password login and server-side input validation following OWASP guidelines</li>
-          <li>Addresses SQL injection and XSS injection weaknesses</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Flask</span><span class="tool-tag">JavaScript</span><span class="tool-tag">REST APIs</span><span class="tool-tag">OTP Auth</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">HexaShield — Honeypot System</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/HexaShield-Deception-Based-Honeypot-System" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">A deception-based network honeypot that captures attacker activity by emulating live services.</p>
-        <ul class="project-bullets">
-          <li>Python socket server on ports 22 & 80 capturing IP, timestamp, and raw payload into SQLite</li>
-          <li>Emulates SSH banner and HTTP 200 responses; verified with Nmap and Netcat</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Socket Programming</span><span class="tool-tag">SQLite</span><span class="tool-tag">Linux</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">ChainGuard — Tamper-Evident Logging</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/ChainGuard-Tamper-Evident-Logging-System" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">A blockchain-inspired logging system using SHA-256 hash chaining for verifiable, tamper-evident records.</p>
-        <ul class="project-bullets">
-          <li>Each log entry stores a SHA-256 hash of its own content and the previous entry</li>
-          <li>Integrity checker script replays the hash chain and pinpoints exact modification index</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">SHA-256</span><span class="tool-tag">File I/O</span><span class="tool-tag">Data Integrity</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">Sentinel AI — Customer Support Chatbot</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/customer-support-ai-sim" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">Rule-based chatbot built in 24 hours at a hackathon, routing queries across billing, returns, and support.</p>
-        <ul class="project-bullets">
-          <li>Correctly routed 24 of 30 test queries during the live hackathon demo</li>
-          <li>Keyword intent matching across billing, returns, and support categories</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">NLTK</span><span class="tool-tag">Intent Matching</span><span class="tool-tag">REST APIs</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">Nexus — Cybersecurity Monitoring Dashboard</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/Nexus-Threat-Detaction-Platfrom" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">Group project — real-time threat detection dashboard visualizing security events by severity and time.</p>
-        <ul class="project-bullets">
-          <li>Built the frontend with Chart.js for real-time security event charts</li>
-          <li>Flask log ingestion endpoint accepting JSON security events for live frontend refresh</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Flask</span><span class="tool-tag">JavaScript</span><span class="tool-tag">Chart.js</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-name">Secure Coding Review System</div>
-          <div class="project-links">
-            <a class="icon-btn" href="https://github.com/Arnab0513/CodeAlpha_SecureCodingReview" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-          </div>
-        </div>
-        <p class="project-desc">Static analysis tool that reviews Flask apps for OWASP Top 10 vulnerabilities and flags insecure patterns.</p>
-        <ul class="project-bullets">
-          <li>Identified SQL injection in query params and reflected XSS in comment fields</li>
-          <li>Script flags raw string interpolation in SQL, missing session timeouts, debug mode left on</li>
-        </ul>
-        <div class="project-tools">
-          <span class="tool-tag">Python</span><span class="tool-tag">Flask</span><span class="tool-tag">OWASP Top 10</span><span class="tool-tag">Static Analysis</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="experience">
-    <p class="section-label">Experience</p>
-    <h2 class="section-title">Where I've worked</h2>
-    <div class="exp-card">
-      <div class="exp-header">
-        <div class="exp-company">Infosys — Technology & Consulting</div>
-        <div class="exp-date">Aug – Oct 2025 · Remote</div>
-      </div>
-      <div class="exp-role">AI & Software Development Intern</div>
-      <ul class="exp-bullets">
-        <li>Contributed to RealtyAI — a real estate price prediction project; cleaned and preprocessed 500+ property records using Python and Pandas</li>
-        <li>Assisted in training regression models by running feature set experiments and reporting findings to the senior ML engineer</li>
-        <li>Produced Matplotlib dashboards visualizing price distribution and outlier patterns, presented during biweekly sprint reviews</li>
-        <li>Followed Agile practices across daily stand-ups and biweekly sprints throughout the 3-month engagement</li>
+  <!-- Glass Navbar -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">AJ<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-  </section>
+  </nav>
 
-  <section id="education">
-    <p class="section-label">Education</p>
-    <h2 class="section-title">Academic background</h2>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div>
-          <div class="edu-deg">B.Tech — CSE (IoT, Cybersecurity & Blockchain)</div>
-          <div class="edu-inst">Institute of Engineering and Management, Kolkata</div>
-        </div>
-        <div class="edu-right">
-          <div class="edu-result">7.52 CGPA</div>
-          <div class="edu-year">2023 – Present</div>
-        </div>
-      </div>
-      <div class="edu-card">
-        <div>
-          <div class="edu-deg">Senior Secondary — WBCHSE (Science)</div>
-          <div class="edu-inst">Chhotakhelna Surendra Smriti Vidyamandir</div>
-        </div>
-        <div class="edu-right">
-          <div class="edu-result">73%</div>
-          <div class="edu-year">2023</div>
-        </div>
-      </div>
-      <div class="edu-card">
-        <div>
-          <div class="edu-deg">Secondary — WBBSE</div>
-          <div class="edu-inst">Chhotakhelna Surendra Smriti Vidyamandir</div>
-        </div>
-        <div class="edu-right">
-          <div class="edu-result">92%</div>
-          <div class="edu-year">2021</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <p class="section-label">Achievements</p>
-    <h2 class="section-title">Highlights</h2>
-    <div class="ach-list">
-      <div class="ach-item">
-        <div class="ach-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
-        </div>
-        <div class="ach-text">Completed a 3-month remote internship at Infosys, contributing to data preparation and ML visualization for a real estate analytics assignment.</div>
-      </div>
-      <div class="ach-item">
-        <div class="ach-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
-        </div>
-        <div class="ach-text">Delivered five independent projects and one group project across Cybersecurity and full-stack development while maintaining a 7.52 CGPA across five semesters.</div>
-      </div>
-      <div class="ach-item">
-        <div class="ach-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"/></svg>
-        </div>
-        <div class="ach-text">Evaluated a functional chatbot prototype at a 24-hour hackathon, correctly routing 24 of 30 test cases during the live demonstration.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title">Get in touch</h2>
-    <div class="contact-grid">
-      <a class="contact-item" href="mailto:arnab.jana2228@gmail.com">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">arnab.jana2228@gmail.com</div>
-        </div>
-      </a>
-      <a class="contact-item" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">arnab-jana-a439a028b</div>
-        </div>
-      </a>
-      <a class="contact-item" href="https://github.com/Arnab0513" target="_blank">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="stroke:none"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">github.com/Arnab0513</div>
-        </div>
-      </a>
-      <a class="contact-item" href="tel:+918317842228">
-        <div class="contact-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Phone</div>
-          <div class="contact-value">+91 8317842228</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-</div>
-
-<footer>
   <div class="container">
-    Built by Arnab Jana · <a href="https://github.com/Arnab0513">github.com/Arnab0513</a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">Open to internships & full-time roles</div>
+      <h1>Building secure, resilient systems for <span>tomorrow</span></h1>
+      <p class="hero-sub">Hi, I'm <strong>Arnab Jana</strong>. A Computer Science student specializing in Cybersecurity, Blockchain, and IoT. I engineer secure web applications and AI-driven networks.</p>
+      
+      <div class="hero-links">
+        <a class="btn btn-primary" href="https://github.com/Arnab0513" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="mailto:arnab.jana2228@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          Get In Touch
+        </a>
+      </div>
+
+      <!-- Quick Info Cards -->
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+          <div>Location: <strong>Kolkata, India</strong></div>
+        </div>
+        <div class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+          <div>Education: <strong>IEM Kolkata (CSE)</strong></div>
+        </div>
+        <div class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          <div>Phone: <strong>+91 8317842228</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-label">Profile</div>
+      <h2 class="section-title">About Me</h2>
+      
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I am a <strong>third-year Computer Science student</strong> at IEM Kolkata, specializing in <strong>IoT, Cybersecurity, and Blockchain Technology</strong>. I focus on developing systems that guarantee data integrity, resist intrusion, and comply with secure development practices.<br><br>
+          With experience across <strong>six projects</strong> (ranging from socket-level honeypots to custom cryptographic logging systems) and a <strong>3-month ML internship at Infosys</strong>, I bridge the gap between reliable engineering and modern cybersecurity principles.</p>
+        </div>
+        
+        <div class="stats-card">
+          <div class="stat-item">
+            <span class="stat-label">B.Tech CGPA</span>
+            <span class="stat-value">7.52</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Projects Built</span>
+            <span class="stat-value">6+</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Specialization</span>
+            <span class="stat-value" style="font-size: 14px; font-weight: 700; text-align: right;">Security & IoT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Sub-Grid -->
+      <div class="skills-section">
+        <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: 700; color: #fff;">Core Skills</h3>
+        <div class="skills-grid">
+          
+          <div class="skill-group glass-card">
+            <div class="skill-group-title">Languages</div>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C</span>
+              <span class="tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+          
+          <div class="skill-group glass-card">
+            <div class="skill-group-title">Cybersecurity</div>
+            <div class="skill-tags">
+              <span class="tag">OWASP Top 10</span>
+              <span class="tag">SQL Injection</span>
+              <span class="tag">XSS Prevention</span>
+              <span class="tag">Honeypots</span>
+              <span class="tag">Intrusion Detection</span>
+            </div>
+          </div>
+          
+          <div class="skill-group glass-card">
+            <div class="skill-group-title">AI & ML</div>
+            <div class="skill-tags">
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">NLP</span>
+            </div>
+          </div>
+          
+          <div class="skill-group glass-card">
+            <div class="skill-group-title">Web & DevOps</div>
+            <div class="skill-tags">
+              <span class="tag">Flask</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Chart.js</span>
+              <span class="tag">Git & GitHub</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Agile</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-label">Works</div>
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">TaskFlow</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/TaskFlow-Secure-Task-Management-System" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A secure, full-stack task management application enforcing strict access-controls and server-side safety checks.</p>
+          <ul class="project-bullets">
+            <li>Enforced role-based access controls for Admin vs. Standard User dashboards.</li>
+            <li>Constructed server-side validations addressing SQLi and Reflected XSS threats.</li>
+            <li>Implemented custom OTP validation layers during user login workflows.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Flask</span>
+            <span class="tool-tag">JavaScript</span>
+            <span class="tool-tag">SQLAlchemy</span>
+            <span class="tool-tag">Security</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">HexaShield</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/HexaShield-Deception-Based-Honeypot-System" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A deception-based honeypot system emulating standard network ports to log unauthorized port-scanning actions.</p>
+          <ul class="project-bullets">
+            <li>Created a custom socket listener on ports 22 and 80 logging payload entries.</li>
+            <li>Stored connection data, timestamps, and target payloads in a SQLite database.</li>
+            <li>Simulated fake headers and service banners validated via active Nmap scans.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Sockets</span>
+            <span class="tool-tag">SQLite</span>
+            <span class="tool-tag">Linux</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">ChainGuard</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/ChainGuard-Tamper-Evident-Logging-System" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A blockchain-inspired, cryptographically-secure logging system that detects unauthorized data changes.</p>
+          <ul class="project-bullets">
+            <li>Designed a system using sequential SHA-256 hashes for transaction chaining.</li>
+            <li>Developed verification algorithms tracing block records back to root hash.</li>
+            <li>Created validation shell scripts that pinpoint exact modification lines.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">Cryptography</span>
+            <span class="tool-tag">SHA-256</span>
+            <span class="tool-tag">Shell</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">Sentinel AI</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/customer-support-ai-sim" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A lightweight, keyword-matching customer support intent router developed for rapid deployment.</p>
+          <ul class="project-bullets">
+            <li>Created tokenization filters using Python NLTK libraries.</li>
+            <li>Designed simple keyphrase matching dictionaries (billing, returns, support).</li>
+            <li>Achieved 80% test set accuracy during a 24-hour hackathon showcase.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">NLTK</span>
+            <span class="tool-tag">NLP</span>
+            <span class="tool-tag">Hackathon</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">Nexus Dashboard</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/Nexus-Threat-Detaction-Platfrom" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A cybersecurity event monitoring system visualizing real-time intrusion flags (Group Project).</p>
+          <ul class="project-bullets">
+            <li>Created a log ingestion REST endpoint on Flask processing JSON event fields.</li>
+            <li>Designed front-end charts using Chart.js responding dynamically to updates.</li>
+            <li>Configured severity flags sorting incoming threats into risk categories.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Flask</span>
+            <span class="tool-tag">Chart.js</span>
+            <span class="tool-tag">JSON Ingestion</span>
+            <span class="tool-tag">Team</span>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card glass-card">
+          <div class="project-header">
+            <h3 class="project-name">Secure Review</h3>
+            <div class="project-links">
+              <a class="icon-btn" href="https://github.com/Arnab0513/CodeAlpha_SecureCodingReview" target="_blank" title="GitHub Source">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">A static code scanner analyzing Python Flask apps for SQLi, XSS, and debug configuration oversights.</p>
+          <ul class="project-bullets">
+            <li>Parsed source codes flags detecting raw string SQL query formats.</li>
+            <li>Identified insecure cross-site rendering and missing token configurations.</li>
+            <li>Outputs structured reports classifying items by severity and line coordinates.</li>
+          </ul>
+          <div class="project-tools">
+            <span class="tool-tag">Python</span>
+            <span class="tool-tag">AST Parsing</span>
+            <span class="tool-tag">Regex</span>
+            <span class="tool-tag">OWASP 10</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="section-label">History</div>
+      <h2 class="section-title">Work Experience</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card">
+            <div class="exp-header">
+              <span class="exp-company">Infosys</span>
+              <span class="exp-date">Aug – Oct 2025</span>
+            </div>
+            <div class="exp-role">AI & Software Development Intern (Remote)</div>
+            <ul class="exp-bullets">
+              <li>Worked on <strong>RealtyAI</strong>, a regression analytics platform, parsing over 500 records using Python and Pandas.</li>
+              <li>Collaborated on training regression pipelines, reporting results to senior engineers.</li>
+              <li>Created price distribution scatterplots and boxplots using Matplotlib during bi-weekly sprint reviews.</li>
+              <li>Practiced Agile development, active participation in daily stand-ups and sprint backlogs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Academic Background</h2>
+      
+      <div class="edu-grid">
+        
+        <div class="edu-card glass-card">
+          <div>
+            <div class="edu-deg">B.Tech in Computer Science & Engineering</div>
+            <div class="edu-inst">Institute of Engineering and Management (IEM), Kolkata</div>
+          </div>
+          <div class="edu-right">
+            <div class="edu-result">7.52 CGPA</div>
+            <div class="edu-year">2023 – Present</div>
+          </div>
+        </div>
+
+        <div class="edu-card glass-card">
+          <div>
+            <div class="edu-deg">Senior Secondary Class XII (Science)</div>
+            <div class="edu-inst">Chhotakhelna Surendra Smriti Vidyamandir</div>
+          </div>
+          <div class="edu-right">
+            <div class="edu-result">73% Score</div>
+            <div class="edu-year">Completed 2023</div>
+          </div>
+        </div>
+
+        <div class="edu-card glass-card">
+          <div>
+            <div class="edu-deg">Secondary Class X</div>
+            <div class="edu-inst">Chhotakhelna Surendra Smriti Vidyamandir</div>
+          </div>
+          <div class="edu-right">
+            <div class="edu-result">92% Score</div>
+            <div class="edu-year">Completed 2021</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+      <div class="section-label">Honors</div>
+      <h2 class="section-title">Highlights & Achievements</h2>
+      
+      <div class="ach-grid">
+        
+        <div class="ach-card">
+          <div class="ach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+          </div>
+          <div class="ach-text">Completed a 3-month AI & software internship at Infosys working with Agile teams.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
+          </div>
+          <div class="ach-text">Designed and implemented 6 functional software projects spanning cryptography, sockets, and full-stack frameworks.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"/></svg>
+          </div>
+          <div class="ach-text">Successfully built and presented a customer routing bot demo within a 24-hour hackathon time limit.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-label">Connect</div>
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-grid">
+        
+        <a class="contact-card glass-card" href="mailto:arnab.jana2228@gmail.com">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">arnab.jana2228@gmail.com</span>
+          </div>
+        </a>
+
+        <a class="contact-card glass-card" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Arnab Jana</span>
+          </div>
+        </a>
+
+        <a class="contact-card glass-card" href="https://github.com/Arnab0513" target="_blank">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">Arnab0513</span>
+          </div>
+        </a>
+
+        <a class="contact-card glass-card" href="tel:+918317842228">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 8317842228</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
   </div>
-</footer>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Built with ❤️ by Arnab Jana. Host your own at <a href="https://github.com/Arnab0513/portfolio" target="_blank">github.com/Arnab0513/portfolio</a>.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
