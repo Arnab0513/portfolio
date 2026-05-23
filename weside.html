@@ -21,7 +21,7 @@
       --accent-secondary: #2B7A4B; /* Elegant Green Highlight */
       --accent-glow: rgba(20, 83, 45, 0.05);
       --text: #111827;
-      --text-muted: #4B5563; /* Darker muted text color for improved readability on cream background */
+      --text-muted: #374151; /* Dark charcoal color to make all secondary/body content clearly visible on cream background */
       --border: #E5E7EB;
       --border-hover: rgba(20, 83, 45, 0.35);
       --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -157,12 +157,11 @@
       color: var(--accent);
     }
 
-    .nav-logo-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+    .nav-logo-svg {
+      color: var(--accent);
+      filter: drop-shadow(0 2px 4px rgba(20, 83, 45, 0.15));
+      display: inline-block;
+      vertical-align: middle;
     }
 
     .nav-links {
@@ -1011,7 +1010,9 @@
   <nav>
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <div class="nav-logo-dot"></div>
+        <svg class="nav-logo-svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 15a4 4 0 1 0 8 0v-6M12 9v9a4 4 0 0 1-8 0" />
+        </svg>
         Arnab <span class="logo-accent">Jana</span>
       </a>
       <ul class="nav-links">
