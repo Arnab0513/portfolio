@@ -20,25 +20,20 @@
     }
 
     :root {
-      --bg: #05070f;
-      --card-bg: rgba(13, 17, 30, 0.45);
-      --card-border: rgba(255, 255, 255, 0.06);
-      --card-border-hover: rgba(99, 102, 241, 0.35);
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --accent: #6366f1; /* Indigo */
-      --accent-glow: rgba(99, 102, 241, 0.15);
-      --accent2: #14b8a6; /* Teal */
-      --accent2-glow: rgba(20, 184, 166, 0.15);
-      --accent3: #ec4899; /* Pink */
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --card-border: #27272a;
+      --card-border-hover: #3f3f46;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --text-dim: #71717a;
+      --accent: #3b82f6; /* Subtle Cobalt Blue for key states */
       --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     }
 
     body {
       background: var(--bg);
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 40%);
+      background-image: radial-gradient(circle at 50% 0%, #1c1917 0%, transparent 50%);
       background-attachment: fixed;
       color: var(--text);
       font-family: var(--font);
@@ -50,24 +45,23 @@
 
     /* Selection Highlight */
     ::selection {
-      background: rgba(99, 102, 241, 0.3);
+      background: rgba(255, 255, 255, 0.15);
       color: #fff;
     }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
     ::-webkit-scrollbar-track {
       background: var(--bg);
     }
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 5px;
-      border: 2px solid var(--bg);
+      background: #27272a;
+      border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: #3f3f46;
     }
 
     /* Container Utility */
@@ -77,17 +71,16 @@
       padding: 0 24px;
     }
 
-    /* STICKY GLASS NAVBAR */
+    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(5, 7, 15, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 9, 11, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       z-index: 100;
       padding: 18px 0;
-      transition: all 0.3s ease;
     }
 
     .nav-inner {
@@ -100,60 +93,38 @@
     }
 
     .nav-logo {
-      font-weight: 800;
-      font-size: 20px;
+      font-weight: 700;
+      font-size: 18px;
       color: #fff;
-      letter-spacing: -0.5px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      letter-spacing: -0.5px;
     }
 
     .nav-logo span {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 500;
-      transition: all 0.2s ease;
+      transition: color 0.2s ease;
       text-decoration: none;
-      position: relative;
-      padding: 4px 0;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      transition: width 0.3s ease;
     }
 
     .nav-links a:hover {
       color: #fff;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
     /* HERO SECTION */
     .hero {
-      padding: 100px 0 80px;
+      padding: 90px 0 70px;
       position: relative;
     }
 
@@ -161,103 +132,82 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(20, 184, 166, 0.06);
-      border: 1px solid rgba(20, 184, 166, 0.2);
+      background: #18181b;
+      border: 1px solid var(--card-border);
       border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 13px;
+      padding: 6px 14px;
+      font-size: 12.5px;
       font-weight: 600;
-      color: var(--accent2);
-      margin-bottom: 28px;
-      animation: pulse-border 3s infinite;
+      color: var(--text-muted);
+      margin-bottom: 24px;
     }
 
     .hero-badge::before {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--accent2);
-      box-shadow: 0 0 8px var(--accent2);
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
     }
 
     h1 {
-      font-size: 64px;
+      font-size: 54px;
       font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1.1;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
       margin-bottom: 20px;
       color: #fff;
     }
 
-    h1 span {
-      background: linear-gradient(135deg, var(--accent) 30%, #818cf8 60%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     .hero-sub {
-      font-size: 19px;
+      font-size: 18px;
       color: var(--text-muted);
-      max-width: 620px;
+      max-width: 650px;
       margin-bottom: 36px;
       font-weight: 400;
+      line-height: 1.7;
     }
 
     .hero-links {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
 
     /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-size: 15px;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-size: 14px;
       font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s ease;
       cursor: pointer;
       text-decoration: none;
-      border: none;
     }
 
     .btn-github {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      background: #fafafa;
+      color: #09090b;
     }
     .btn-github:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #334155, #1e293b);
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.15);
+      background: #ffffff;
+      transform: translateY(-1px);
     }
 
-    .btn-linkedin {
-      background: linear-gradient(135deg, #0a66c2, #004182);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(10, 102, 194, 0.25);
+    .btn-linkedin, .btn-email {
+      background: #18181b;
+      border: 1px solid var(--card-border);
+      color: var(--text);
     }
-    .btn-linkedin:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #0d7bf2, #0a66c2);
-      box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
-    }
-
-    .btn-email {
-      background: linear-gradient(135deg, #0d9488, #0f766e);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(13, 148, 136, 0.25);
-    }
-    .btn-email:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #14b8a6, #0d9488);
-      box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
+    .btn-linkedin:hover, .btn-email:hover {
+      background: #27272a;
+      border-color: var(--card-border-hover);
+      transform: translateY(-1px);
     }
 
     /* Hero Metadata Grid */
@@ -265,26 +215,24 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      background: rgba(255, 255, 255, 0.02);
+      background: #121214;
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 20px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 18px;
     }
 
     .meta-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 14.5px;
+      gap: 10px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
     .meta-item svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--accent2);
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-muted);
       stroke-width: 2;
       flex-shrink: 0;
     }
@@ -296,53 +244,39 @@
 
     /* SECTION BASICS */
     section {
-      padding: 80px 0;
+      padding: 70px 0;
       border-bottom: 1px solid var(--card-border);
-      position: relative;
     }
 
     .section-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--accent2);
+      color: var(--text-dim);
       margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-label::after {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: var(--accent2);
     }
 
     .section-title {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
-      margin-bottom: 40px;
-      letter-spacing: -1px;
+      margin-bottom: 36px;
+      letter-spacing: -0.8px;
       color: #fff;
     }
 
-    /* Glassmorphism Card Style */
+    /* Flat Glass Card Style */
     .glass-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 28px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.2s ease;
     }
 
     .glass-card:hover {
       border-color: var(--card-border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.05);
+      transform: translateY(-2px);
     }
 
     /* ABOUT & STATS */
@@ -354,9 +288,9 @@
     }
 
     .about-text {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--text-muted);
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     .about-text strong {
@@ -367,31 +301,31 @@
     .stats-card {
       display: grid;
       grid-template-rows: repeat(3, 1fr);
-      gap: 16px;
+      gap: 12px;
     }
 
     .stat-item {
-      background: rgba(255, 255, 255, 0.02);
+      background: #121214;
       border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 16px 20px;
+      border-radius: 8px;
+      padding: 14px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .stat-label {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .stat-value {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--accent2);
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
     }
 
     /* SKILLS GRID */
@@ -407,63 +341,43 @@
 
     .skill-group {
       padding: 20px;
-      border-radius: 16px;
     }
 
     .skill-group-title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .skill-group-title::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 6px var(--accent);
-    }
-
-    .skill-group:nth-child(2n) .skill-group-title::before {
-      background: var(--accent2);
-      box-shadow: 0 0 6px var(--accent2);
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .tag {
-      background: rgba(255, 255, 255, 0.03);
+      background: #121214;
       border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 4px 12px;
-      font-size: 13px;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12.5px;
       color: var(--text-muted);
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .tag:hover {
-      background: rgba(99, 102, 241, 0.08);
-      border-color: rgba(99, 102, 241, 0.3);
+      border-color: var(--card-border-hover);
       color: #fff;
-      transform: scale(1.05);
     }
 
     /* PROJECTS SECTIONS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
 
     .project-card {
@@ -476,12 +390,12 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       gap: 12px;
     }
 
     .project-name {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #fff;
     }
@@ -493,51 +407,49 @@
     }
 
     .icon-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: #121214;
       border: 1px solid var(--card-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       color: var(--text-muted);
     }
 
     .icon-btn:hover {
-      border-color: var(--accent);
+      border-color: var(--card-border-hover);
       color: #fff;
-      background: rgba(99, 102, 241, 0.1);
     }
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 14.5px;
-      margin-bottom: 16px;
+      font-size: 14px;
+      margin-bottom: 14px;
       line-height: 1.6;
       flex-grow: 1;
     }
 
     .project-bullets {
       list-style: none;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .project-bullets li {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
-      padding: 4px 0;
-      padding-left: 18px;
+      padding: 3px 0;
+      padding-left: 16px;
       position: relative;
     }
 
     .project-bullets li::before {
-      content: '✓';
+      content: '–';
       position: absolute;
       left: 0;
-      color: var(--accent2);
-      font-weight: bold;
+      color: var(--text-dim);
     }
 
     .project-tools {
@@ -548,34 +460,34 @@
     }
 
     .tool-tag {
-      background: rgba(99, 102, 241, 0.08);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      border-radius: 6px;
+      background: #121214;
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
       padding: 3px 8px;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 600;
-      color: #a5b4fc;
+      color: var(--text-muted);
     }
 
     /* TIMELINE (Experience & Education) */
     .timeline {
       position: relative;
-      padding-left: 32px;
+      padding-left: 28px;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 7px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+      left: 5px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--card-border);
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .timeline-item:last-child {
@@ -584,57 +496,52 @@
 
     .timeline-dot {
       position: absolute;
-      left: -32px;
+      left: -28px;
       top: 6px;
-      width: 16px;
-      height: 16px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       background: var(--bg);
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+      border: 2px solid var(--card-border);
       z-index: 2;
-      transition: all 0.3s ease;
-    }
-
-    .timeline-item:nth-child(even) .timeline-dot {
-      border-color: var(--accent2);
-      box-shadow: 0 0 8px var(--accent2);
+      transition: all 0.2s ease;
     }
 
     .timeline-item:hover .timeline-dot {
-      transform: scale(1.3);
+      border-color: #fff;
+      background: #fff;
     }
 
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       flex-wrap: wrap;
       gap: 8px;
     }
 
     .exp-company {
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 700;
       color: #fff;
     }
 
     .exp-date {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 500;
       color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.03);
+      background: #121214;
       border: 1px solid var(--card-border);
-      padding: 3px 10px;
-      border-radius: 20px;
+      padding: 2px 8px;
+      border-radius: 4px;
     }
 
     .exp-role {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      color: var(--accent2);
-      margin-bottom: 16px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
     }
 
     .exp-bullets {
@@ -642,26 +549,25 @@
     }
 
     .exp-bullets li {
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--text-muted);
-      padding: 5px 0;
-      padding-left: 20px;
+      padding: 4px 0;
+      padding-left: 18px;
       position: relative;
       line-height: 1.6;
     }
 
     .exp-bullets li::before {
-      content: '↳';
+      content: '•';
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-weight: 700;
+      color: var(--text-dim);
     }
 
     /* EDUCATION CARDS GRID */
     .edu-grid {
       display: grid;
-      gap: 20px;
+      gap: 16px;
     }
 
     .edu-card {
@@ -673,12 +579,12 @@
 
     .edu-deg {
       font-weight: 700;
-      font-size: 17px;
+      font-size: 16px;
       color: #fff;
     }
 
     .edu-inst {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
       margin-top: 4px;
     }
@@ -689,14 +595,14 @@
     }
 
     .edu-result {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--accent2);
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
     }
 
     .edu-year {
       font-size: 12px;
-      color: var(--text-muted);
+      color: var(--text-dim);
       margin-top: 4px;
     }
 
@@ -710,50 +616,35 @@
     .ach-card {
       display: flex;
       align-items: flex-start;
-      gap: 18px;
+      gap: 16px;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 12px;
+      padding: 20px;
     }
 
     .ach-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(20, 184, 166, 0.08);
-      border-radius: 12px;
+      width: 36px;
+      height: 36px;
+      background: #121214;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--accent2);
+      color: var(--text-muted);
     }
 
     .ach-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--accent2);
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-muted);
       stroke-width: 2;
     }
 
-    .ach-card:nth-child(2) .ach-icon {
-      background: rgba(99, 102, 241, 0.08);
-      color: var(--accent);
-    }
-    .ach-card:nth-child(2) .ach-icon svg {
-      stroke: var(--accent);
-    }
-
-    .ach-card:nth-child(3) .ach-icon {
-      background: rgba(236, 72, 153, 0.08);
-      color: var(--accent3);
-    }
-    .ach-card:nth-child(3) .ach-icon svg {
-      stroke: var(--accent3);
-    }
-
     .ach-text {
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -761,31 +652,33 @@
     /* CONTACT GRID */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      /* Adjusted minimum width to 190px to fit 4 columns in 1 row on desktop */
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
     }
 
     .contact-card {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
+      gap: 14px;
       text-decoration: none;
-      padding: 24px;
+      padding: 20px;
       height: 100%;
     }
 
     .contact-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(255, 255, 255, 0.02);
+      width: 40px;
+      height: 40px;
+      background: #121214;
       border: 1px solid var(--card-border);
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: all 0.3s ease;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
     }
 
     .contact-details {
@@ -797,94 +690,49 @@
     .contact-label {
       font-size: 11px;
       font-weight: 700;
-      color: var(--text-muted);
+      color: var(--text-dim);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .contact-value {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #fff;
       font-weight: 600;
       margin-top: 4px;
       word-break: break-word;
     }
 
-    /* Individual Card Hover Glows */
-    .card-email:hover {
-      border-color: rgba(20, 184, 166, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(20, 184, 166, 0.08);
-    }
-    .card-email:hover .contact-icon {
-      background: rgba(20, 184, 166, 0.1);
-      border-color: var(--accent2);
-      color: var(--accent2);
-      transform: scale(1.08);
+    .contact-card:hover {
+      border-color: var(--card-border-hover);
     }
 
-    .card-linkedin:hover {
-      border-color: rgba(10, 102, 194, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(10, 102, 194, 0.08);
-    }
-    .card-linkedin:hover .contact-icon {
-      background: rgba(10, 102, 194, 0.1);
-      border-color: #0a66c2;
-      color: #0a66c2;
-      transform: scale(1.08);
-    }
-
-    .card-github:hover {
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.08);
-    }
-    .card-github:hover .contact-icon {
-      background: rgba(99, 102, 241, 0.1);
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: scale(1.08);
-    }
-
-    .card-phone:hover {
-      border-color: rgba(16, 185, 129, 0.4);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(16, 185, 129, 0.08);
-    }
-    .card-phone:hover .contact-icon {
-      background: rgba(16, 185, 129, 0.1);
-      border-color: #10b981;
-      color: #10b981;
-      transform: scale(1.08);
+    .contact-card:hover .contact-icon {
+      background: #27272a;
+      border-color: var(--card-border-hover);
+      color: #fff;
     }
 
     /* FOOTER */
     footer {
       padding: 40px 0;
       text-align: center;
-      color: var(--text-muted);
-      font-size: 14.5px;
+      color: var(--text-dim);
+      font-size: 13.5px;
       border-top: 1px solid var(--card-border);
-    }
-
-    /* Keyframes */
-    @keyframes pulse-border {
-      0%, 100% {
-        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.2);
-      }
-      50% {
-        box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
-      }
     }
 
     /* RESPONSIVE LAYOUT */
     @media (max-width: 868px) {
       h1 {
-        font-size: 48px;
+        font-size: 42px;
       }
       .hero {
-        padding: 80px 0 60px;
+        padding: 70px 0 50px;
       }
       .about-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
       }
       .stats-card {
         grid-template-columns: repeat(3, 1fr);
@@ -895,11 +743,11 @@
 
     @media (max-width: 640px) {
       h1 {
-        font-size: 38px;
-        letter-spacing: -1px;
+        font-size: 32px;
+        letter-spacing: -0.5px;
       }
       .nav-links {
-        display: none; /* simple fallback for simplicity */
+        display: none;
       }
       .exp-header {
         flex-direction: column;
@@ -921,10 +769,10 @@
 </head>
 <body>
 
-  <!-- Glass Navbar -->
+  <!-- Navbar -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-logo">AJ<span>.</span></a>
+      <a href="#" class="nav-logo">Arnab Jana<span>.</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -940,21 +788,21 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-badge">Open to internships & full-time roles</div>
-      <h1>Building secure, resilient systems for <span>tomorrow</span></h1>
-      <p class="hero-sub">Hi, I'm <strong>Arnab Jana</strong>. A Computer Science student specializing in Cybersecurity, Blockchain, and IoT. I engineer secure web applications and AI-driven networks.</p>
+      <h1>Building secure, resilient systems for tomorrow</h1>
+      <p class="hero-sub">I'm a Computer Science student specializing in Cybersecurity, Blockchain, and IoT. I engineer secure web applications and AI-driven networks.</p>
       
       <div class="hero-links">
         <a class="btn btn-github" href="https://github.com/Arnab0513" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
         <a class="btn btn-linkedin" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           LinkedIn
         </a>
         <a class="btn btn-email" href="mailto:arnab.jana2228@gmail.com">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-          Get In Touch
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          Contact Me
         </a>
       </div>
 
@@ -997,14 +845,14 @@
           </div>
           <div class="stat-item">
             <span class="stat-label">Specialization</span>
-            <span class="stat-value" style="font-size: 14px; font-weight: 700; text-align: right;">Security & IoT</span>
+            <span class="stat-value" style="font-size: 13.5px; font-weight: 700; text-align: right;">Security & IoT</span>
           </div>
         </div>
       </div>
 
       <!-- Skills Sub-Grid -->
       <div class="skills-section">
-        <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: 700; color: #fff;">Core Skills</h3>
+        <h3 style="font-size: 17px; margin-bottom: 20px; font-weight: 700; color: #fff;">Core Skills</h3>
         <div class="skills-grid">
           
           <div class="skill-group glass-card">
@@ -1315,9 +1163,9 @@
       
       <div class="contact-grid">
         
-        <a class="contact-card glass-card card-email" href="mailto:arnab.jana2228@gmail.com">
+        <a class="contact-card glass-card" href="mailto:arnab.jana2228@gmail.com">
           <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
           </div>
           <div class="contact-details">
             <span class="contact-label">Email</span>
@@ -1325,9 +1173,9 @@
           </div>
         </a>
 
-        <a class="contact-card glass-card card-linkedin" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
+        <a class="contact-card glass-card" href="https://linkedin.com/in/arnab-jana-a439a028b" target="_blank">
           <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </div>
           <div class="contact-details">
             <span class="contact-label">LinkedIn</span>
@@ -1335,9 +1183,9 @@
           </div>
         </a>
 
-        <a class="contact-card glass-card card-github" href="https://github.com/Arnab0513" target="_blank">
+        <a class="contact-card glass-card" href="https://github.com/Arnab0513" target="_blank">
           <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
           </div>
           <div class="contact-details">
             <span class="contact-label">GitHub</span>
@@ -1345,9 +1193,9 @@
           </div>
         </a>
 
-        <a class="contact-card glass-card card-phone" href="tel:+918317842228">
+        <a class="contact-card glass-card" href="tel:+918317842228">
           <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
           </div>
           <div class="contact-details">
             <span class="contact-label">Phone</span>
