@@ -21,7 +21,7 @@
       --accent-secondary: #2B7A4B; /* Elegant Green Highlight */
       --accent-glow: rgba(20, 83, 45, 0.05);
       --text: #111827;
-      --text-muted: #6B7280;
+      --text-muted: #4B5563; /* Darker muted text color for improved readability on cream background */
       --border: #E5E7EB;
       --border-hover: rgba(20, 83, 45, 0.35);
       --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -153,6 +153,10 @@
       gap: 8px;
     }
 
+    .nav-logo .logo-accent {
+      color: var(--accent);
+    }
+
     .nav-logo-dot {
       width: 8px;
       height: 8px;
@@ -277,10 +281,10 @@
 
     .hero-desc {
       font-size: 18px;
-      color: var(--text-muted);
+      color: #2D3748; /* Dark slate color to ensure high visibility and contrast on cream background */
       max-width: 680px;
       margin: 0 auto 40px;
-      font-weight: 400;
+      font-weight: 450; /* Slightly bolder for better legibility */
       line-height: 1.7;
     }
 
@@ -1008,7 +1012,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <div class="nav-logo-dot"></div>
-        Arnab Jana
+        Arnab <span class="logo-accent">Jana</span>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
