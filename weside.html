@@ -8,7 +8,7 @@
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     /* CSS Variables & Core Theme */
@@ -19,13 +19,13 @@
       --primary: #1F2937;
       --accent: #14532D; /* Forest Green Accent */
       --accent-secondary: #2B7A4B; /* Elegant Green Highlight */
-      --accent-glow: rgba(20, 83, 45, 0.05);
+      --accent-glow: rgba(20, 83, 45, 0.08);
       --text: #111827;
-      --text-muted: #374151; /* Dark charcoal color to make all secondary/body content clearly visible on cream background */
+      --text-muted: #374151;
       --border: #E5E7EB;
       --border-hover: rgba(20, 83, 45, 0.35);
-      --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
-      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
     * {
@@ -39,8 +39,8 @@
       background-color: var(--bg);
       /* Cyber Grid Background Pattern */
       background-image: 
-        linear-gradient(rgba(20, 83, 45, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(20, 83, 45, 0.015) 1px, transparent 1px);
+        linear-gradient(rgba(20, 83, 45, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 83, 45, 0.02) 1px, transparent 1px);
       background-size: 44px 44px;
       background-position: center top;
       color: var(--text);
@@ -131,7 +131,7 @@
       border-radius: 100px;
       z-index: 1000;
       padding: 10px 24px;
-      box-shadow: 0 8px 32px rgba(31, 41, 55, 0.05);
+      box-shadow: 0 8px 32px rgba(31, 41, 55, 0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -173,7 +173,7 @@
     .nav-links a {
       color: var(--text-muted);
       font-size: 13.5px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
       transition: color 0.2s ease;
       position: relative;
@@ -264,11 +264,11 @@
 
     h1 {
       font-family: var(--font-heading);
-      font-size: 58px;
+      font-size: 62px;
       font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 24px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      margin-bottom: 28px;
       color: var(--text);
     }
 
@@ -279,13 +279,27 @@
     }
 
     .hero-desc {
-      font-size: 18px;
-      color: #2D3748; /* Dark slate color to ensure high visibility and contrast on cream background */
-      max-width: 680px;
-      margin: 0 auto 40px;
-      font-weight: 450; /* Slightly bolder for better legibility */
-      line-height: 1.7;
-      text-align: left;
+      font-size: 17.5px;
+      color: #2D3748;
+      max-width: 620px;
+      margin: 0 auto 44px;
+      font-weight: 450;
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    /* Soft radial glow behind hero content */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(20, 83, 45, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Standardized Call To Action Row */
@@ -324,7 +338,7 @@
 
     /* SECTION LAYOUTS */
     section {
-      padding: 90px 0;
+      padding: 100px 0;
       border-bottom: 1px solid var(--border);
       position: relative;
     }
@@ -340,7 +354,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       display: block;
     }
 
@@ -350,23 +364,24 @@
       font-weight: 700;
       letter-spacing: -0.8px;
       color: var(--text);
+      margin-bottom: 8px;
     }
 
     /* CLASSIC GLASSMOPRHISM CARD WITH MOUSE HOVER GLOW */
     .glass-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 28px;
       position: relative;
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.35s ease;
     }
 
     .glass-card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(31, 41, 55, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(20, 83, 45, 0.06);
     }
 
     /* Card Radial Glow Effect Tracked via JS */
@@ -397,11 +412,11 @@
     .about-bio {
       font-size: 16.5px;
       color: var(--text-muted);
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     .about-bio p {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .about-bio strong {
@@ -599,11 +614,12 @@
     .tag {
       background: rgba(20, 83, 45, 0.03);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 6px 12px;
       font-size: 13px;
+      font-weight: 600;
       color: var(--text-muted);
-      transition: all 0.2s ease;
+      transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
     }
 
     .tag:hover {
@@ -770,11 +786,16 @@
     .proj-tag {
       background: rgba(20, 83, 45, 0.04);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 4px 8px;
+      border-radius: 6px;
+      padding: 4px 10px;
       font-size: 11.5px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
+      transition: border-color 0.2s ease;
+    }
+
+    .proj-tag:hover {
+      border-color: rgba(20, 83, 45, 0.25);
     }
 
     /* EXPERIENCE TIMELINE */
@@ -1145,7 +1166,8 @@
     /* RESPONSIVE BREAKPOINTS */
     @media (max-width: 900px) {
       h1 {
-        font-size: 46px;
+        font-size: 50px;
+        letter-spacing: -1.2px;
       }
       .hero {
         padding: 130px 0 80px;
@@ -1158,7 +1180,7 @@
 
     @media (max-width: 640px) {
       h1 {
-        font-size: 34px;
+        font-size: 36px;
         letter-spacing: -0.8px;
       }
       nav {
@@ -1182,6 +1204,29 @@
       .edu-meta {
         text-align: left;
       }
+    }
+
+    /* Subtle Fade-In Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -1228,7 +1273,7 @@
       <h1>Building <span class="gradient-text">secure</span> products for real-world problems.</h1>
       
       <p class="hero-desc">
-        I'm currently studying Computer Science and spend most of my time building projects related to cybersecurity, backend development, and automation. I enjoy learning by creating real systems, exploring how security works in practice, and improving my development skills through hands-on work.
+        Computer Science student interested in cybersecurity, backend development, and building practical systems that solve real problems.
       </p>
 
       <!-- Aligned Call To Action Button Row -->
@@ -1987,6 +2032,21 @@
       requestAnimationFrame(animateNetwork);
     }
     animateNetwork();
+
+    // 3. Subtle Fade-In on Scroll
+    const fadeSections = document.querySelectorAll('section');
+    fadeSections.forEach(s => s.classList.add('fade-section'));
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    fadeSections.forEach(s => fadeObserver.observe(s));
   </script>
 
 </body>
