@@ -118,7 +118,7 @@
 
     /* FLOATING NAVBAR */
     nav {
-      position: absolute;
+      position: fixed;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
@@ -133,6 +133,10 @@
       padding: 10px 24px;
       box-shadow: 0 8px 32px rgba(31, 41, 55, 0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    nav.nav-hidden {
+      transform: translate(-50%, -150%);
     }
 
     .nav-inner {
@@ -1273,7 +1277,7 @@
       <h1>Building <span class="gradient-text">secure</span> products for real-world problems.</h1>
       
       <p class="hero-desc">
-        Computer Science student interested in cybersecurity, backend development, and building practical systems that solve real problems.
+        Enjoy learning by creating real systems, exploring how security works in practice, and improving my development skills through hands-on work.
       </p>
 
       <!-- Aligned Call To Action Button Row -->
@@ -2047,6 +2051,31 @@
     }, { threshold: 0.08 });
 
     fadeSections.forEach(s => fadeObserver.observe(s));
+
+    // 4. Smart Navbar: Hide on scroll down, show on scroll up
+    let lastScrollY = window.scrollY;
+    const navbarElement = document.querySelector('nav');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      
+      // If close to the top, show the navbar
+      if (currentScrollY <= 50) {
+        navbarElement.classList.remove('nav-hidden');
+        lastScrollY = currentScrollY;
+        return;
+      }
+      
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down - hide navbar
+        navbarElement.classList.add('nav-hidden');
+      } else {
+        // Scrolling up - show navbar
+        navbarElement.classList.remove('nav-hidden');
+      }
+      
+      lastScrollY = currentScrollY;
+    });
   </script>
 
 </body>
