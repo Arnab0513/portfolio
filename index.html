@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arnab Jana — Computer Science student and security-minded developer." />
+    <title>Arnab Jana — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Subtle film grain -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Original Multilingual Welcome Overlay -->
+    <section class="welcome" id="welcome" aria-label="Welcome">
+      <!-- Animated Background Glow & Interactive Canvas -->
+      <div class="welcome-bg-glow" aria-hidden="true">
+        <div class="welcome-glow-1"></div>
+        <div class="welcome-glow-2"></div>
+      </div>
+      <div class="welcome-grid-lines" aria-hidden="true"></div>
+      <canvas class="welcome-canvas" id="welcomeCanvas" aria-hidden="true"></canvas>
+      <p class="welcome-kicker">WELCOME TO MY CORNER OF THE INTERNET</p>
+      <div class="hello-wrap">
+        <h1 class="hello" aria-label="Hello">
+          <span class="hello-word" id="helloWord"></span><span class="hello-cursor" id="helloCursor" aria-hidden="true"></span>
+        </h1>
+        <button class="begin-button" id="beginButton">Let's begin <span aria-hidden="true">↘</span></button>
+      </div>
+      <div class="welcome-bottom">
+        <p>Thoughtful code · secure systems · human-first experiences</p>
+        <div class="welcome-actions">
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Editorial Header -->
+    <header class="site-header" id="top">
+      <a href="#top" class="monogram" aria-label="Arnab Jana home"><img src="arnab-avatar.png" alt="Arnab Jana"></a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certification">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <p class="header-status">
+          <span class="status-dot"></span> Available for opportunities
+        </p>
+        <a href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf" class="resume-header-link">
+          Resume ↓
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+          <i></i><i></i><i></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Editorial Drawer Menu -->
+    <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+      <button class="menu-close" id="menuClose" aria-label="Close navigation">×</button>
+      <p class="menu-label">NAVIGATION / 01—06</p>
+      <nav>
+        <a href="#about" class="drawer-nav-item">About <em>01</em></a>
+        <a href="#education" class="drawer-nav-item">Education <em>02</em></a>
+        <a href="#projects" class="drawer-nav-item">Projects <em>03</em></a>
+        <a href="#experience" class="drawer-nav-item">Experience <em>04</em></a>
+        <a href="#certification" class="drawer-nav-item">Certifications <em>05</em></a>
+        <a href="#contact" class="drawer-nav-item">Contact <em>06</em></a>
+        <a href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf">Download resume <em>↓</em></a>
+      </nav>
+      <div class="menu-foot">Based in Kolkata, India<br/>Open to internships & collaborations</div>
+    </aside>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero section-pad" id="hero">
+        <!-- Ambient Decorative Lighting & Watermark -->
+        <div class="hero-ambient-glow-1" aria-hidden="true"></div>
+        <div class="hero-ambient-glow-2" aria-hidden="true"></div>
+        <div class="hero-watermark" aria-hidden="true">22.5726° N, 88.3639° E · KOLKATA</div>
+
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left Editorial Column -->
+            <div class="hero-left-col">
+              <div class="hero-status-pill reveal">
+                <span class="pulse-status-dot"></span>
+                <span>OPEN TO INTERNSHIPS &amp; FULL-TIME ROLES</span>
+              </div>
+
+              <div class="hero-meta reveal">
+                COMPUTER SCIENCE STUDENT &middot; SECURITY-MINDED BUILDER
+              </div>
+
+              <h2 class="hero-title reveal">
+                I turn complex<br/>
+                <i>problems</i> into calm,<br/>
+                useful systems.
+              </h2>
+
+              <p class="hero-lead reveal">
+                Fourth-year CSE student at <strong>Institute of Engineering and Management</strong> specializing in IoT, cybersecurity &amp; machine learning. Dedicated to building reliable, resilient software architectures.
+              </p>
+
+              <div class="hero-actions reveal">
+                <a href="#projects" class="text-link primary-cta">
+                  <span>See selected work</span> <span class="btn-arrow">&darr;</span>
+                </a>
+                <a href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf" class="outlined-link secondary-cta">
+                  <span>Download resume</span> <span class="btn-arrow">&darr;</span>
+                </a>
+                <a href="#contact" class="outlined-link secondary-cta">
+                  <span>Get in touch</span> <span class="btn-arrow">&nearr;</span>
+                </a>
+              </div>
+
+              <!-- Quick Metrics Strip -->
+              <div class="hero-metrics-strip reveal">
+                <div class="hero-metric-item">
+                  <span class="metric-value">06+</span>
+                  <span class="metric-label">PROJECTS BUILT</span>
+                </div>
+                <div class="hero-metric-sep"></div>
+                <div class="hero-metric-item">
+                  <span class="metric-value accent">7.7</span>
+                  <span class="metric-label">CGPA INDEX</span>
+                </div>
+                <div class="hero-metric-sep"></div>
+                <div class="hero-metric-item">
+                  <span class="metric-value">IoT &middot; AI</span>
+                  <span class="metric-label">CORE FOCUS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Telemetry Dossier Card -->
+            <div class="hero-editorial-card reveal">
+              <div class="card-glass-highlight" aria-hidden="true"></div>
+              
+              <!-- Card Top Header with Avatar -->
+              <div class="hero-avatar-card-head">
+                <div class="avatar-frame">
+                  <img src="arnab-avatar.png" alt="Arnab Jana" class="hero-avatar-img">
+                  <span class="avatar-online-badge" title="Active Candidate"></span>
+                </div>
+                <div class="avatar-meta">
+                  <div class="avatar-name-row">
+                    <h3 class="avatar-name">Arnab Jana</h3>
+                    <span class="verified-badge" title="Verified Student">&check; Verified</span>
+                  </div>
+                  <p class="avatar-subtext">CSE Student &amp; Security Researcher</p>
+                </div>
+              </div>
+
+              <!-- Telemetry Header -->
+              <div class="telemetry-header-bar">
+                <p class="telemetry-kicker">INDEX TELEMETRY</p>
+                <span class="telemetry-id">ID / AJ-2026</span>
+              </div>
+
+              <!-- Telemetry Data Rows -->
+              <div class="telemetry-rows-list">
+                <div class="telemetry-row">
+                  <span class="telemetry-label">CANDIDATE</span>
+                  <span class="telemetry-val">Arnab Jana</span>
+                </div>
+                <div class="telemetry-row">
+                  <span class="telemetry-label">INSTITUTION</span>
+                  <span class="telemetry-val institution-val">Institute of Engineering and Management</span>
+                </div>
+                <div class="telemetry-row">
+                  <span class="telemetry-label">ACADEMIC INDEX</span>
+                  <span class="telemetry-val index-badge">7.7 CGPA</span>
+                </div>
+                <div class="telemetry-row">
+                  <span class="telemetry-label">SPECIALTY</span>
+                  <span class="telemetry-val">IoT &middot; Cybersecurity &middot; AI</span>
+                </div>
+                <div class="telemetry-row">
+                  <span class="telemetry-label">INTERNSHIP</span>
+                  <span class="telemetry-val highlight-val">Infosys Springboard AI (3 mos)</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Tag Cloud -->
+              <div class="pill-row hero-tags-row">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">AES-256</span>
+                <span class="tag-pill">JavaScript</span>
+                <span class="tag-pill">Flask</span>
+                <span class="tag-pill">Linux</span>
+                <span class="tag-pill">ESP32-CAM</span>
+              </div>
+
+              <!-- Card Status Footer -->
+              <div class="telemetry-footer-bar">
+                <span class="live-sys-dot"></span>
+                <span class="sys-status-text">READY FOR SYSTEM ARCHITECTURE &amp; DEV ROLES</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION (BENTO GRID WITH WARM PAPER PALETTE) -->
+      <section class="section-pad ruled" id="about">
+        <div class="container">
+          <p class="eyebrow reveal">01 / ABOUT ME</p>
+          <div class="section-head reveal">
+            <h2 class="section-title">A builder who thinks about the <i>edges.</i></h2>
+            <a href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf" class="outlined-link">Download resume ↓</a>
+          </div>
+
+          <div class="about-bento">
+            <!-- Bento 1: Story -->
+            <div class="bento-card bento-story reveal">
+              <div class="bento-card-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                <span>ENGINEERING PHILOSOPHY</span>
+              </div>
+              <h3>Turning messy inputs into dependable products</h3>
+              <p>
+                I'm Arnab — a developer drawn to the intersection of secure applications, intelligent systems, and clean interface design. I enjoy the careful work: turning complex security requirements into dependable products people can actually use.
+              </p>
+              <p>
+                Outside the codebase, I'm growing through hackathons, sprint-based product work, and deep dives into application security and anomaly detection.
+              </p>
+              <div class="skill-pills" style="margin-top:14px;">
+                <span class="skill-pill">English <i>(Professional)</i></span>
+                <span class="skill-pill">Hindi <i>(Native)</i></span>
+                <span class="skill-pill">German <i>(Basic)</i></span>
+              </div>
+            </div>
+
+            <!-- Bento 2: Stats -->
+            <div class="bento-card bento-stats reveal">
+              <div class="bento-card-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>KEY MILESTONES</span>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <strong>06</strong>
+                  <span>Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                  <strong>03</strong>
+                  <span>Months @ Infosys Springboard</span>
+                </div>
+                <div class="stat-item">
+                  <strong>7.7</strong>
+                  <span>Current CGPA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento 3: Specialized Toolkit -->
+            <div class="bento-card bento-skills reveal">
+              <div class="bento-card-header">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 6 4-6 4Z"/></svg>
+                <span>SPECIALIZED TOOLKIT</span>
+              </div>
+              
+              <div class="bento-skills-cols">
+                <div class="skills-group">
+                  <div class="skills-group-title">Security & Cryptography</div>
+                  <div class="skill-pills">
+                    <span class="skill-pill">AES-256</span>
+                    <span class="skill-pill">Access Control (RBAC)</span>
+                    <span class="skill-pill">SQL Security</span>
+                    <span class="skill-pill">Linux</span>
+                    <span class="skill-pill">Git</span>
+                  </div>
+                </div>
+
+                <div class="skills-group" style="margin-bottom:0;">
+                  <div class="skills-group-title">AI, Web & Hardware</div>
+                  <div class="skill-pills">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">NLP Detection</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">Flask</span>
+                    <span class="skill-pill">Chart.js</span>
+                    <span class="skill-pill">ESP32 IoT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION (VERTICAL EDITORIAL CARDS) -->
+      <section class="section-pad ruled" id="education">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">02 / ACADEMIC PROFILE</p>
+              <h2 class="section-title">Academic <i>profile.</i></h2>
+            </div>
+          </div>
+
+          <div class="project-cards-wrap">
+            <!-- Education 1: IEM Kolkata -->
+            <article class="project-card reveal">
+              <div class="project-number">01</div>
+              <div class="project-main-col">
+                <p class="project-type">2023 — PRESENT · HIGHER EDUCATION</p>
+                <h3>Institute of Engineering and Management (IEM), Kolkata</h3>
+                <p class="edu-degree">B.Tech in Computer Science &amp; Engineering (4th Year)</p>
+                <div class="project-tags">
+                  <span>Affiliation: IEM</span>
+                  <span>Kolkata, WB, India</span>
+                  <span class="tag-status-open">● Open for Opportunities</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Specializing in core computer science, systems architecture, cryptography, and real-time security telemetry with a solid engineering foundation.</p>
+              </div>
+              <div class="project-actions">
+                <div class="edu-score-badge"><strong>CGPA</strong> 7.7</div>
+              </div>
+            </article>
+
+            <!-- Education 2: Class XII -->
+            <article class="project-card reveal">
+              <div class="project-number">02</div>
+              <div class="project-main-col">
+                <p class="project-type">COMPLETED 2023 · HIGHER SECONDARY</p>
+                <h3>Chhotakhelna Surendra Smriti Vidyamandir</h3>
+                <p class="edu-degree">Higher Secondary Class XII (Science)</p>
+                <div class="project-tags">
+                  <span>WBCHSE Board</span>
+                  <span>Physics</span>
+                  <span>Chemistry</span>
+                  <span>Mathematics</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Pure science curriculum with rigorous coursework in advanced mathematics, physics principles, and analytical problem-solving.</p>
+              </div>
+              <div class="project-actions">
+                <div class="edu-score-badge"><strong>Score</strong> 73%</div>
+              </div>
+            </article>
+
+            <!-- Education 3: Class X -->
+            <article class="project-card reveal">
+              <div class="project-number">03</div>
+              <div class="project-main-col">
+                <p class="project-type">COMPLETED 2021 · SECONDARY</p>
+                <h3>Chhotakhelna Surendra Smriti Vidyamandir</h3>
+                <p class="edu-degree">Secondary Examination Class X</p>
+                <div class="project-tags">
+                  <span>WBBSE Board</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Completed foundational high school education with high academic distinction, achieving excellence across mathematics and sciences.</p>
+              </div>
+              <div class="project-actions">
+                <div class="edu-score-badge"><strong>Score</strong> 92%</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION (SELECTED WORK) -->
+      <section class="section-pad" id="projects">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">03 / SELECTED WORK</p>
+              <h2 class="section-title">Engineered with <i>purpose.</i></h2>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="projects-filter-bar">
+              <button class="filter-chip active" data-filter="all">All (5)</button>
+              <button class="filter-chip" data-filter="security">Security & DLP</button>
+              <button class="filter-chip" data-filter="ai">AI & ML</button>
+              <button class="filter-chip" data-filter="web">Web & Fintech</button>
+              <button class="filter-chip" data-filter="iot">IoT & Robotics</button>
+            </div>
+          </div>
+
+          <div class="project-cards-wrap">
+            <!-- Project 1: Nexus Secure DLP -->
+            <article class="project-card reveal" data-category="security">
+              <div class="project-number">01</div>
+              <div class="project-main-col">
+                <p class="project-type">SECURITY / DATA LOSS PREVENTION</p>
+                <h3>Nexus Secure DLP</h3>
+                <div class="project-tags">
+                  <span>Python</span>
+                  <span>AES-256</span>
+                  <span>Access Control</span>
+                  <span>Encryption</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>A security-focused platform with AES-256 encryption, role-aware access control (RBAC), and real-time threat monitoring.</p>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Arnab0513/Nexus-Secure-Dlp" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Project 2: Sentinel -->
+            <article class="project-card reveal" data-category="ai security">
+              <div class="project-number">02</div>
+              <div class="project-main-col">
+                <p class="project-type">AI / THREAT DETECTION</p>
+                <h3>Sentinel</h3>
+                <div class="project-tags">
+                  <span>NLP Intent</span>
+                  <span>Fraud Detection</span>
+                  <span>Anomaly ML</span>
+                  <span>JS</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>NLP-based intent classification for insider fraud and anomaly detection, built during an intensive 24-hour sprint.</p>
+              </div>
+              <div class="project-actions">
+                <a class="live" href="https://arnab0513.github.io/Sentinel" target="_blank" rel="noopener">Live site ↗</a>
+                <a href="https://github.com/Arnab0513/Sentinel" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Project 3: MoneyMind Dashboard -->
+            <article class="project-card reveal" data-category="web">
+              <div class="project-number">03</div>
+              <div class="project-main-col">
+                <p class="project-type">FINTECH / DASHBOARD</p>
+                <h3>MoneyMind Dashboard</h3>
+                <div class="project-tags">
+                  <span>React</span>
+                  <span>Data Viz</span>
+                  <span>Fintech UX</span>
+                  <span>Vercel</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>A premium fintech dashboard experience for making day-to-day money information easier to read, navigate, and act on.</p>
+              </div>
+              <div class="project-actions">
+                <a class="live" href="https://moneymind-dashboard.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+                <a href="https://github.com/Arnab0513/moneymind-dashboard" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Project 4: FinanceAI Controller -->
+            <article class="project-card reveal" data-category="ai web">
+              <div class="project-number">04</div>
+              <div class="project-main-col">
+                <p class="project-type">AI / PERSONAL FINANCE</p>
+                <h3>FinanceAI Controller</h3>
+                <div class="project-tags">
+                  <span>AI Engine</span>
+                  <span>Forecasting</span>
+                  <span>Fintech</span>
+                  <span>Anomaly Alerts</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>An AI financial brain for explaining transactions, detecting recurring anomalies, and forecasting financial decisions.</p>
+              </div>
+              <div class="project-actions">
+                <a class="live" href="https://finance-ai-controller-your-ai-finan.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+                <a href="https://github.com/Arnab0513/FinanceAI-Controller-Your-AI-Finan" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Project 5: TaskFlow -->
+            <article class="project-card reveal" data-category="web security">
+              <div class="project-number">05</div>
+              <div class="project-main-col">
+                <p class="project-type">FULL STACK / SECURITY</p>
+                <h3>TaskFlow</h3>
+                <div class="project-tags">
+                  <span>Full-Stack</span>
+                  <span>Protected Auth</span>
+                  <span>REST APIs</span>
+                  <span>JWT</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>A secure task management system designed around dependable workflows and protected user access boundaries.</p>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Arnab0513/TaskFlow-Secure-Task-Management-System" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Project 6: Smart Surveillance & Bluetooth-Controlled Robot Car -->
+            <article class="project-card reveal" data-category="iot">
+              <div class="project-number">06</div>
+              <div class="project-main-col">
+                <p class="project-type">IOT / ROBOTICS</p>
+                <h3>Smart Surveillance Robot Car</h3>
+                <div class="project-tags">
+                  <span>ESP32-CAM</span>
+                  <span>Arduino</span>
+                  <span>Embedded C</span>
+                  <span>Bluetooth</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Developed a Bluetooth-controlled robot car with ESP32-CAM for real-time video streaming, integrating wireless surveillance for remote navigation.</p>
+              </div>
+              
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EXPERIENCE SECTION -->
+      <section class="section-pad experience-section" id="experience">
+        <div class="container">
+          <p class="eyebrow reveal">04 / EXPERIENCE & TOOLKIT</p>
+          
+          <div class="experience-grid">
+            <div class="exp-box reveal">
+              <p class="year-badge">AUG 2025 — OCT 2025</p>
+              <h3>Infosys Springboard</h3>
+              <p class="role-title">AI & Software Development Intern</p>
+              <ul class="exp-bullets">
+                <li>Contributed directly to the <strong>RealtyAI Platform</strong>, systematically processing over 500+ structured property records.</li>
+                <li>Conducted regression experiments and price prediction modeling under sprint constraints.</li>
+                <li>Presented data analytics and interactive visualizations to lead engineers in bi-weekly reviews.</li>
+              </ul>
+            </div>
+
+            <div class="toolkit-box reveal">
+              <p class="year-badge">CORE TOOLKIT</p>
+              <h3 style="font: 500 24px 'Playfair Display', serif; margin-bottom:6px;">Instruments & Technologies</h3>
+              <p style="font-size:13px; color:var(--muted); line-height:1.5;">Proficiencies applied across software development, network protocols, and embedded systems:</p>
+              
+              <div class="toolkit-chips">
+                <span class="toolkit-chip">Python</span>
+                <span class="toolkit-chip">JavaScript</span>
+                <span class="toolkit-chip">Flask</span>
+                <span class="toolkit-chip">REST APIs</span>
+                <span class="toolkit-chip">SQL Security</span>
+                <span class="toolkit-chip">Chart.js</span>
+                <span class="toolkit-chip">Git & GitHub</span>
+                <span class="toolkit-chip">Linux CLI</span>
+                <span class="toolkit-chip">ESP32 Hardware</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATION SECTION -->
+      <section class="section-pad ruled" id="certification">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">05 / CERTIFICATIONS</p>
+              <h2 class="section-title">Verified skills &amp; <i>simulations.</i></h2>
+            </div>
+          </div>
+          
+          <div class="project-cards-wrap">
+            <!-- Cert 1: Mastercard -->
+            <article class="project-card reveal">
+              <div class="project-number">01</div>
+              <div class="project-main-col">
+                <p class="project-type">MASTERCARD · VIA FORAGE</p>
+                <h3>Cybersecurity Job Simulation</h3>
+                <div class="project-tags">
+                  <span>Phishing Simulation</span>
+                  <span>Threat Intelligence</span>
+                  <span>Risk Analysis</span>
+                  <span>Security Operations</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Completed practical tasks designing enterprise phishing email simulations, analyzing simulated attack telemetry, and interpreting threat mitigation outcomes.</p>
+              </div>
+              <div class="project-actions">
+                <button class="cert-action-btn" onclick="openCertModal('mastercard-cert.png')">View Certificate ↗</button>
+              </div>
+            </article>
+
+            <!-- Cert 2: Cognizant -->
+            <article class="project-card reveal">
+              <div class="project-number">02</div>
+              <div class="project-main-col">
+                <p class="project-type">COGNIZANT · VIA FORAGE</p>
+                <h3>Agile Methodology Job Simulation</h3>
+                <div class="project-tags">
+                  <span>Agile &amp; Scrum</span>
+                  <span>User Stories</span>
+                  <span>Sprint Ceremonies</span>
+                  <span>Backlog Planning</span>
+                </div>
+              </div>
+              <div class="project-desc-col">
+                <p>Completed practical tasks across Waterfall vs. Agile execution, user story drafting, sprint ceremonies, agile management tools, and managing curveball project scenarios.</p>
+              </div>
+              <div class="project-actions">
+                <button class="cert-action-btn" onclick="openCertModal('cognizant-cert.png')">View Certificate ↗</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION (DARK EDITORIAL FINALE) -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <p class="eyebrow contact-eyebrow reveal">06 / LET'S CONNECT</p>
+          <h2 class="contact-title reveal">
+            Have an idea?<br/>
+            <i>Let's make it real.</i>
+          </h2>
+
+          <div class="contact-links-grid reveal">
+            <a class="contact-row-link" id="emailLink" href="mailto:arnab.jana2228@gmail.com">
+              <span class="contact-link-left">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>arnab.jana2228@gmail.com</span>
+              </span>
+              <span class="contact-arrow">↗</span>
+            </a>
+            <a class="contact-row-link" href="https://www.linkedin.com/in/arnab-jana-a439a028b/" target="_blank" rel="noopener">
+              <span class="contact-link-left">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.63 1.63 0 1 0 0-3.26 1.63 1.63 0 0 0 0 3.26m1.4 9.74V10.13H5.06v8.37h2.8z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </span>
+              <span class="contact-arrow">↗</span>
+            </a>
+            <a class="contact-row-link" href="https://github.com/Arnab0513" target="_blank" rel="noopener">
+              <span class="contact-link-left">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>GitHub</span>
+              </span>
+              <span class="contact-arrow">↗</span>
+            </a>
+            <a class="contact-row-link" href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf">
+              <span class="contact-link-left">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Full Resume (PDF)</span>
+              </span>
+              <span class="contact-arrow">↓</span>
+            </a>
+          </div>
+
+          <div class="contact-bottom reveal">
+            <p>Kolkata, India · Open for global opportunities</p>
+            <div>
+              <a href="https://www.linkedin.com/in/arnab-jana-a439a028b/" target="_blank" rel="noopener" style="margin-right:20px;">LinkedIn ↗</a>
+              <a href="https://github.com/Arnab0513" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+            <p>© <span id="year"></span> Arnab Jana</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="editorial-toast" id="toast">Email copied to clipboard</div>
+
+    <!-- Cert Modal -->
+    <div class="cert-modal" id="certModal" onclick="closeCertModal(event)">
+      <button class="cert-modal-close" onclick="closeCertModal(event)">×</button>
+      <img src="" alt="Certificate" class="cert-modal-content" id="certModalImg">
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
