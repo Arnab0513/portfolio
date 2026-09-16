@@ -327,9 +327,9 @@ body {
   transition: border-color 0.3s ease;
 }
 
-/* ===== NAV LINKS — VISIBLE ON DESKTOP ===== */
+/* ===== NAV LINKS — HIDDEN ON DESKTOP ===== */
 .nav-links {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 6px;
   list-style: none;
@@ -413,7 +413,7 @@ body {
 }
 
 .menu-toggle {
-  display: none;
+  display: block;
   border: 0;
   background: none;
   width: 36px;
