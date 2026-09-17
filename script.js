@@ -188,7 +188,7 @@ drawerItems.forEach(item => item.addEventListener('click', () => setMenu(false))
 
 // 3. Project Filter with Smooth Animation
 const filterChips = document.querySelectorAll('.filter-chip');
-const projectCards = document.querySelectorAll('#projects .project-card');
+const productCards = document.querySelectorAll('#projects .product-card');
 
 filterChips.forEach(chip => {
   chip.addEventListener('click', () => {
@@ -196,39 +196,56 @@ filterChips.forEach(chip => {
     chip.classList.add('active');
     const filter = chip.dataset.filter;
 
-    projectCards.forEach((card, index) => {
+    productCards.forEach((card, index) => {
       const category = card.dataset.category || '';
       const shouldShow = filter === 'all' || category.includes(filter);
       
       if (shouldShow) {
-        card.style.display = 'grid';
+        card.style.display = 'flex';
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         setTimeout(() => {
           card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
           card.style.opacity = '1';
           card.style.transform = 'translateY(0)';
-        }, index * 80);
+        }, index * 60);
       } else {
-        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
         card.style.opacity = '0';
         card.style.transform = 'translateY(-10px)';
         setTimeout(() => {
           card.style.display = 'none';
-        }, 300);
+        }, 250);
       }
     });
   });
 });
 
-// 4. Scroll Reveal with Staggered Delays
+// Email click copy-to-clipboard handler
+const emailLink = document.getElementById('emailLink');
+const toast = document.getElementById('toast');
+
+if (emailLink && toast) {
+  emailLink.addEventListener('click', (e) => {
+    // If not standard mailto navigation or to provide extra feedback
+    navigator.clipboard?.writeText('arnab.jana2228@gmail.com').then(() => {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    });
+  });
+}
+
+// 4. Scroll Reveal (Trigger once so elements stay rock-solid visible when scrolling)
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => revealObserver.observe(el));
 

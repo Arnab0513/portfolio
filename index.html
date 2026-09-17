@@ -7,7 +7,7 @@
     <title>Arnab Jana — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Sacramento&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -28,10 +28,13 @@
         <h1 class="hello" aria-label="Hello">
           <span class="hello-word" id="helloWord"></span><span class="hello-cursor" id="helloCursor" aria-hidden="true"></span>
         </h1>
-        <button class="begin-button" id="beginButton">Let's begin <span aria-hidden="true">↘</span></button>
+        <button class="begin-button" id="beginButton">
+          <span class="begin-btn-text">Let's begin</span>
+          <span class="begin-btn-arrow" aria-hidden="true">↘</span>
+        </button>
       </div>
       <div class="welcome-bottom">
-        <p>Thoughtful code · secure systems · human-first experiences</p>
+        <p>Secure systems. Real solutions. · Thoughtful code · Human-first experiences</p>
         <div class="welcome-actions">
           
           
@@ -84,10 +87,10 @@
     <main>
       <!-- HERO SECTION -->
       <section class="hero section-pad" id="hero">
-        <!-- Ambient Decorative Lighting & Watermark -->
+        <!-- Ambient Decorative Lighting & Geometric Accent Block -->
+        <div class="hero-geo-shape" aria-hidden="true"></div>
         <div class="hero-ambient-glow-1" aria-hidden="true"></div>
         <div class="hero-ambient-glow-2" aria-hidden="true"></div>
-        <div class="hero-watermark" aria-hidden="true">22.5726° N, 88.3639° E · KOLKATA</div>
 
         <div class="container">
           <div class="hero-grid">
@@ -99,7 +102,7 @@
               </div>
 
               <div class="hero-meta reveal">
-                COMPUTER SCIENCE STUDENT &middot; SECURITY-MINDED BUILDER
+                SECURE SYSTEMS. REAL SOLUTIONS. &middot; CSE STUDENT &amp; BUILDER
               </div>
 
               <h2 class="hero-title reveal">
@@ -109,15 +112,15 @@
               </h2>
 
               <p class="hero-lead reveal">
-                Fourth-year CSE student at <strong>Institute of Engineering and Management</strong> specializing in IoT, cybersecurity &amp; machine learning. Dedicated to building reliable, resilient software architectures.
+                Fourth-year CSE student at <strong>Institute of Engineering and Management, Kolkata</strong> specializing in IoT, cybersecurity &amp; machine learning. Dedicated to building reliable, resilient software architectures.
               </p>
 
               <div class="hero-actions reveal">
-                <a href="#projects" class="text-link primary-cta">
-                  <span>See selected work</span> <span class="btn-arrow">&darr;</span>
+                <a href="#projects" class="primary-cta">
+                  <span>Explore Projects</span> <span class="btn-arrow">&darr;</span>
                 </a>
 
-                <a href="#contact" class="outlined-link secondary-cta">
+                <a href="#contact" class="secondary-cta">
                   <span>Get in touch</span> <span class="btn-arrow">&nearr;</span>
                 </a>
               </div>
@@ -141,69 +144,76 @@
               </div>
             </div>
 
-            <!-- Right Telemetry Dossier Card -->
-            <div class="hero-editorial-card reveal">
-              <div class="card-glass-highlight" aria-hidden="true"></div>
-              
-              <!-- Card Top Header with Avatar -->
-              <div class="hero-avatar-card-head">
-                <div class="avatar-frame">
-                  <img src="arnab-avatar.png" alt="Arnab Jana" class="hero-avatar-img">
-                  <span class="avatar-online-badge" title="Active Candidate"></span>
-                </div>
-                <div class="avatar-meta">
-                  <div class="avatar-name-row">
-                    <h3 class="avatar-name">Arnab Jana</h3>
-                    <span class="verified-badge" title="Verified Student">&check; Verified</span>
+            <!-- Right Profile / Identity Card -->
+            <div class="hero-identity-card-wrap reveal">
+              <div class="hero-identity-backdrop" aria-hidden="true"></div>
+              <div class="hero-editorial-card">
+                <div class="card-glass-highlight" aria-hidden="true"></div>
+                
+                <!-- Card Top Header with Avatar -->
+                <div class="hero-avatar-card-head">
+                  <div class="avatar-frame">
+                    <img src="arnab-avatar.png" alt="Arnab Jana" class="hero-avatar-img">
+                    <span class="avatar-online-badge" title="Active Candidate"></span>
                   </div>
-                  <p class="avatar-subtext">CSE Student &amp; Security Researcher</p>
+                  <div class="avatar-meta">
+                    <div class="avatar-name-row">
+                      <h3 class="avatar-name">Arnab Jana</h3>
+                      <span class="verified-badge" title="Verified Student">&check; Verified</span>
+                    </div>
+                    <p class="avatar-subtext">CSE Student &amp; Developer</p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Telemetry Header -->
-              <div class="telemetry-header-bar">
-                <p class="telemetry-kicker">INDEX TELEMETRY</p>
-                <span class="telemetry-id">ID / AJ-2026</span>
-              </div>
+                <!-- Telemetry Header -->
+                <div class="telemetry-header-bar">
+                  <p class="telemetry-kicker">PROFILE TELEMETRY</p>
+                  <span class="telemetry-id">ID / AJ-2026</span>
+                </div>
 
-              <!-- Telemetry Data Rows -->
-              <div class="telemetry-rows-list">
-                <div class="telemetry-row">
-                  <span class="telemetry-label">CANDIDATE</span>
-                  <span class="telemetry-val">Arnab Jana</span>
+                <!-- Telemetry Data Rows -->
+                <div class="telemetry-rows-list">
+                  <div class="telemetry-row">
+                    <span class="telemetry-label">CANDIDATE</span>
+                    <span class="telemetry-val">Arnab Jana</span>
+                  </div>
+                  <div class="telemetry-row">
+                    <span class="telemetry-label">INSTITUTION</span>
+                    <span class="telemetry-val institution-val">Institute of Engineering &amp; Management, Kolkata</span>
+                  </div>
+                  <div class="telemetry-row">
+                    <span class="telemetry-label">ACADEMIC INDEX</span>
+                    <span class="telemetry-val index-badge">7.7 CGPA</span>
+                  </div>
+                  <div class="telemetry-row">
+                    <span class="telemetry-label">SPECIALTY</span>
+                    <span class="telemetry-val">IoT &middot; Security &middot; AI</span>
+                  </div>
+                  <div class="telemetry-row">
+                    <span class="telemetry-label">INTERNSHIP</span>
+                    <span class="telemetry-val highlight-val">Infosys Springboard</span>
+                  </div>
                 </div>
-                <div class="telemetry-row">
-                  <span class="telemetry-label">INSTITUTION</span>
-                  <span class="telemetry-val institution-val">Institute of Engineering and Management</span>
-                </div>
-                <div class="telemetry-row">
-                  <span class="telemetry-label">ACADEMIC INDEX</span>
-                  <span class="telemetry-val index-badge">7.7 CGPA</span>
-                </div>
-                <div class="telemetry-row">
-                  <span class="telemetry-label">SPECIALTY</span>
-                  <span class="telemetry-val">IoT &middot; Cybersecurity &middot; AI</span>
-                </div>
-                <div class="telemetry-row">
-                  <span class="telemetry-label">INTERNSHIP</span>
-                  <span class="telemetry-val highlight-val">Infosys Springboard AI (3 mos)</span>
-                </div>
-              </div>
 
-              <!-- Tech Stack Tag Cloud -->
-              <div class="pill-row hero-tags-row">
-                <span class="tag-pill">Python</span>
-                <span class="tag-pill">AES-256</span>
-                <span class="tag-pill">JavaScript</span>
-                <span class="tag-pill">Flask</span>
-                <span class="tag-pill">Linux</span>
-                <span class="tag-pill">ESP32-CAM</span>
-              </div>
+                <!-- Tech Stack Tag Cloud -->
+                <div class="pill-row hero-tags-row">
+                  <span class="tag-pill">Python</span>
+                  <span class="tag-pill">C</span>
+                  <span class="tag-pill">Java</span>
+                  <span class="tag-pill">JavaScript</span>
+                  <span class="tag-pill">HTML</span>
+                  <span class="tag-pill">CSS</span>
+                  <span class="tag-pill">Flask</span>
+                  <span class="tag-pill">SQL</span>
+                  <span class="tag-pill">Linux</span>
+                  <span class="tag-pill">ESP32</span>
+                </div>
 
-              <!-- Card Status Footer -->
-              <div class="telemetry-footer-bar">
-                <span class="live-sys-dot"></span>
-                <span class="sys-status-text">READY FOR SYSTEM ARCHITECTURE &amp; DEV ROLES</span>
+                <!-- Card Status Footer -->
+                <div class="telemetry-footer-bar">
+                  <span class="live-sys-dot"></span>
+                  <span class="sys-status-text">READY FOR SYSTEM ARCHITECTURE &amp; DEV ROLES</span>
+                </div>
               </div>
             </div>
           </div>
@@ -216,7 +226,6 @@
           <p class="eyebrow reveal">01 / ABOUT ME</p>
           <div class="section-head reveal">
             <h2 class="section-title">A builder who thinks about the <i>edges.</i></h2>
-
           </div>
 
           <div class="about-bento">
@@ -235,6 +244,7 @@
               </p>
               <div class="skill-pills" style="margin-top:14px;">
                 <span class="skill-pill">English <i>(Professional)</i></span>
+                <span class="skill-pill">Bengali <i>(Native)</i></span>
                 <span class="skill-pill">Hindi <i>(Native)</i></span>
                 <span class="skill-pill">German <i>(Basic)</i></span>
               </div>
@@ -308,65 +318,65 @@
             </div>
           </div>
 
-          <div class="project-cards-wrap">
+          <div class="education-cards-wrap">
             <!-- Education 1: IEM Kolkata -->
-            <article class="project-card reveal">
-              <div class="project-number">01</div>
-              <div class="project-main-col">
-                <p class="project-type">2023 — PRESENT · HIGHER EDUCATION</p>
+            <article class="edu-card reveal">
+              <div class="edu-badge-number">01</div>
+              <div class="edu-main-col">
+                <p class="edu-type">2023 — PRESENT · HIGHER EDUCATION</p>
                 <h3>Institute of Engineering and Management (IEM), Kolkata</h3>
                 <p class="edu-degree">B.Tech in Computer Science &amp; Engineering (4th Year)</p>
-                <div class="project-tags">
+                <div class="edu-tags">
                   <span>Affiliation: IEM</span>
                   <span>Kolkata, WB, India</span>
                   <span class="tag-status-open">● Open for Opportunities</span>
                 </div>
               </div>
-              <div class="project-desc-col">
+              <div class="edu-desc-col">
                 <p>Specializing in core computer science, systems architecture, cryptography, and real-time security telemetry with a solid engineering foundation.</p>
               </div>
-              <div class="project-actions">
+              <div class="edu-actions">
                 <div class="edu-score-badge"><strong>CGPA</strong> 7.7</div>
               </div>
             </article>
 
             <!-- Education 2: Class XII -->
-            <article class="project-card reveal">
-              <div class="project-number">02</div>
-              <div class="project-main-col">
-                <p class="project-type">COMPLETED 2023 · HIGHER SECONDARY</p>
+            <article class="edu-card reveal">
+              <div class="edu-badge-number">02</div>
+              <div class="edu-main-col">
+                <p class="edu-type">COMPLETED 2023 · HIGHER SECONDARY</p>
                 <h3>Chhotakhelna Surendra Smriti Vidyamandir</h3>
                 <p class="edu-degree">Higher Secondary Class XII (Science)</p>
-                <div class="project-tags">
+                <div class="edu-tags">
                   <span>WBCHSE Board</span>
                   <span>Physics</span>
                   <span>Chemistry</span>
                   <span>Mathematics</span>
                 </div>
               </div>
-              <div class="project-desc-col">
+              <div class="edu-desc-col">
                 <p>Pure science curriculum with rigorous coursework in advanced mathematics, physics principles, and analytical problem-solving.</p>
               </div>
-              <div class="project-actions">
+              <div class="edu-actions">
                 <div class="edu-score-badge"><strong>Score</strong> 73%</div>
               </div>
             </article>
 
             <!-- Education 3: Class X -->
-            <article class="project-card reveal">
-              <div class="project-number">03</div>
-              <div class="project-main-col">
-                <p class="project-type">COMPLETED 2021 · SECONDARY</p>
+            <article class="edu-card reveal">
+              <div class="edu-badge-number">03</div>
+              <div class="edu-main-col">
+                <p class="edu-type">COMPLETED 2021 · SECONDARY</p>
                 <h3>Chhotakhelna Surendra Smriti Vidyamandir</h3>
                 <p class="edu-degree">Secondary Examination Class X</p>
-                <div class="project-tags">
+                <div class="edu-tags">
                   <span>WBBSE Board</span>
                 </div>
               </div>
-              <div class="project-desc-col">
+              <div class="edu-desc-col">
                 <p>Completed foundational high school education with high academic distinction, achieving excellence across mathematics and sciences.</p>
               </div>
-              <div class="project-actions">
+              <div class="edu-actions">
                 <div class="edu-score-badge"><strong>Score</strong> 92%</div>
               </div>
             </article>
@@ -374,154 +384,368 @@
         </div>
       </section>
 
-      <!-- PROJECTS SECTION (SELECTED WORK) -->
-      <section class="section-pad" id="projects">
+      <!-- PROJECTS SECTION (PRODUCT-STYLE GRID) -->
+      <section class="section-pad ruled" id="projects">
         <div class="container">
           <div class="section-head reveal">
             <div>
-              <p class="eyebrow">03 / SELECTED WORK</p>
+              <p class="eyebrow">03 / LATEST PROJECTS</p>
               <h2 class="section-title">Engineered with <i>purpose.</i></h2>
             </div>
             
             <!-- Category Filter -->
             <div class="projects-filter-bar">
-              <button class="filter-chip active" data-filter="all">All (5)</button>
-              <button class="filter-chip" data-filter="security">Security & DLP</button>
-              <button class="filter-chip" data-filter="ai">AI & ML</button>
-              <button class="filter-chip" data-filter="web">Web & Fintech</button>
-              <button class="filter-chip" data-filter="iot">IoT & Robotics</button>
+              <button class="filter-chip active" data-filter="all">All (6)</button>
+              <button class="filter-chip" data-filter="security">Security &amp; DLP</button>
+              <button class="filter-chip" data-filter="ai">AI &amp; ML</button>
+              <button class="filter-chip" data-filter="web">Web &amp; Fintech</button>
+              <button class="filter-chip" data-filter="iot">IoT &amp; Hardware</button>
             </div>
           </div>
 
-          <div class="project-cards-wrap">
+          <!-- Product Style Grid -->
+          <div class="product-grid">
             <!-- Project 1: Nexus Secure DLP -->
-            <article class="project-card reveal" data-category="security">
-              <div class="project-number">01</div>
-              <div class="project-main-col">
-                <p class="project-type">SECURITY / DATA LOSS PREVENTION</p>
-                <h3>Nexus Secure DLP</h3>
-                <div class="project-tags">
-                  <span>Python</span>
-                  <span>AES-256</span>
-                  <span>Access Control</span>
-                  <span>Encryption</span>
+            <article class="product-card reveal" data-category="security">
+              <div class="product-card-preview preview-security">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">01</span>
+                  <span class="product-category-tag">SECURITY / DLP</span>
+                </div>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
                 </div>
               </div>
-              <div class="project-desc-col">
-                <p>A security-focused platform with AES-256 encryption, role-aware access control (RBAC), and real-time threat monitoring.</p>
+              
+              <div class="product-card-body">
+                <h3 class="product-title">Nexus Secure DLP</h3>
+                <p class="product-headline">Enterprise-grade data loss prevention &amp; access control platform</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Organizations suffer catastrophic data breaches from unauthorized file access and sensitive data exfiltration.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Architected an end-to-end security suite featuring AES-256 file encryption and strict role-based access control (RBAC).</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Implemented Python cryptographic pipelines with granular permission verification and real-time activity auditing.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Guarantees zero-trust data privacy and prevents unauthorized data tampering across teams.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tag-tech-icon"/> Python</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> AES-256</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RBAC</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tag-tech-icon"/> Linux</span>
+                </div>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/Arnab0513/Nexus-Secure-Dlp" target="_blank" rel="noopener">GitHub ↗</a>
+
+              <div class="product-card-footer">
+                <a href="https://github.com/Arnab0513/Nexus-Secure-Dlp" target="_blank" rel="noopener" class="product-btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>Source Code</span>
+                </a>
               </div>
             </article>
 
             <!-- Project 2: Sentinel -->
-            <article class="project-card reveal" data-category="ai security">
-              <div class="project-number">02</div>
-              <div class="project-main-col">
-                <p class="project-type">AI / THREAT DETECTION</p>
-                <h3>Sentinel</h3>
-                <div class="project-tags">
-                  <span>NLP Intent</span>
-                  <span>Fraud Detection</span>
-                  <span>Anomaly ML</span>
-                  <span>JS</span>
+            <article class="product-card reveal" data-category="ai security">
+              <div class="product-card-preview preview-ai">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">02</span>
+                  <span class="product-category-tag">AI / THREAT DETECTION</span>
+                </div>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
                 </div>
               </div>
-              <div class="project-desc-col">
-                <p>NLP-based intent classification for insider fraud and anomaly detection, built during an intensive 24-hour sprint.</p>
+              
+              <div class="product-card-body">
+                <h3 class="product-title">Sentinel AI – Threat Detection</h3>
+                <p class="product-headline">AI system for detecting insider fraud &amp; anomalies in organizational environments</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Organizations struggle to detect insider threats because malicious behavior often appears normal in early stages.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Developed an AI-based system that detects insider fraud using NLP-driven intent classification and anomaly detection.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Used NLTK for text processing and machine learning models to classify user intent and identify abnormal activity patterns.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Enables early detection of suspicious behavior, drastically improving security monitoring efficiency.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tag-tech-icon"/> Python</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> NLP</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Machine Learning</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tag-tech-icon"/> JavaScript</span>
+                </div>
               </div>
-              <div class="project-actions">
-                <a class="live" href="https://arnab0513.github.io/Sentinel" target="_blank" rel="noopener">Live site ↗</a>
-                <a href="https://github.com/Arnab0513/Sentinel" target="_blank" rel="noopener">GitHub ↗</a>
+
+              <div class="product-card-footer">
+                <a href="https://arnab0513.github.io/Sentinel" target="_blank" rel="noopener" class="product-btn primary">
+                  <span>Live App</span> <span class="btn-arrow">&nearr;</span>
+                </a>
+                <a href="https://github.com/Arnab0513/Sentinel" target="_blank" rel="noopener" class="product-btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>Source Code</span>
+                </a>
               </div>
             </article>
 
             <!-- Project 3: MoneyMind Dashboard -->
-            <article class="project-card reveal" data-category="web">
-              <div class="project-number">03</div>
-              <div class="project-main-col">
-                <p class="project-type">FINTECH / DASHBOARD</p>
-                <h3>MoneyMind Dashboard</h3>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>Data Viz</span>
-                  <span>Fintech UX</span>
-                  <span>Vercel</span>
+            <article class="product-card reveal" data-category="web">
+              <div class="product-card-preview preview-fintech">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">03</span>
+                  <span class="product-category-tag">FINTECH / PRODUCT</span>
+                </div>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
                 </div>
               </div>
-              <div class="project-desc-col">
-                <p>A premium fintech dashboard experience for making day-to-day money information easier to read, navigate, and act on.</p>
+              
+              <div class="product-card-body">
+                <h3 class="product-title">MoneyMind Dashboard</h3>
+                <p class="product-headline">Interactive fintech analytics &amp; cashflow intelligence platform</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Users find personal financial tracking confusing due to fragmented transaction data and dense banking reports.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Built an intuitive, responsive fintech cockpit that transforms complex balance sheets into actionable visual insights.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Engineered modular React components, dynamic Chart.js dashboards, and automated category aggregation pipelines.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Provides instant spending clarity and empowers users to make data-backed budgeting decisions effortlessly.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tag-tech-icon"/> React</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tag-tech-icon"/> JavaScript</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> Chart.js</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><polygon points="12 2 2 22 22 22"/></svg> Vercel</span>
+                </div>
               </div>
-              <div class="project-actions">
-                <a class="live" href="https://moneymind-dashboard.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
-                <a href="https://github.com/Arnab0513/moneymind-dashboard" target="_blank" rel="noopener">GitHub ↗</a>
+
+              <div class="product-card-footer">
+                <a href="https://moneymind-dashboard.vercel.app" target="_blank" rel="noopener" class="product-btn primary">
+                  <span>Live App</span> <span class="btn-arrow">&nearr;</span>
+                </a>
+                <a href="https://github.com/Arnab0513/moneymind-dashboard" target="_blank" rel="noopener" class="product-btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>Source Code</span>
+                </a>
               </div>
             </article>
 
             <!-- Project 4: FinanceAI Controller -->
-            <article class="project-card reveal" data-category="ai web">
-              <div class="project-number">04</div>
-              <div class="project-main-col">
-                <p class="project-type">AI / PERSONAL FINANCE</p>
-                <h3>FinanceAI Controller</h3>
-                <div class="project-tags">
-                  <span>AI Engine</span>
-                  <span>Forecasting</span>
-                  <span>Fintech</span>
-                  <span>Anomaly Alerts</span>
+            <article class="product-card reveal" data-category="ai web">
+              <div class="product-card-preview preview-ai">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">04</span>
+                  <span class="product-category-tag">AI / FINANCIAL AGENT</span>
+                </div>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
                 </div>
               </div>
-              <div class="project-desc-col">
-                <p>An AI financial brain for explaining transactions, detecting recurring anomalies, and forecasting financial decisions.</p>
+              
+              <div class="product-card-body">
+                <h3 class="product-title">FinanceAI Controller</h3>
+                <p class="product-headline">Autonomous AI financial copilot for predictive forecasting &amp; anomaly detection</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Unexpected recurring fee increases, billing spikes, and subtle anomalies frequently escape manual human review.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Created an autonomous AI controller that interprets ledger entries, detects anomalies, and generates future cashflow forecasts.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Coupled LLM reasoning with time-series statistical models for real-time anomaly detection and natural language financial explanations.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Eliminates financial blindspots and shields users against hidden subscription drains before they compound.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tag-tech-icon"/> Python</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> AI Engine</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tag-tech-icon"/> React</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Time Series</span>
+                </div>
               </div>
-              <div class="project-actions">
-                <a class="live" href="https://finance-ai-controller-your-ai-finan.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
-                <a href="https://github.com/Arnab0513/FinanceAI-Controller-Your-AI-Finan" target="_blank" rel="noopener">GitHub ↗</a>
+
+              <div class="product-card-footer">
+                <a href="https://finance-ai-controller-your-ai-finan.vercel.app" target="_blank" rel="noopener" class="product-btn primary">
+                  <span>Live App</span> <span class="btn-arrow">&nearr;</span>
+                </a>
+                <a href="https://github.com/Arnab0513/FinanceAI-Controller-Your-AI-Finan" target="_blank" rel="noopener" class="product-btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>Source Code</span>
+                </a>
               </div>
             </article>
 
             <!-- Project 5: TaskFlow -->
-            <article class="project-card reveal" data-category="web security">
-              <div class="project-number">05</div>
-              <div class="project-main-col">
-                <p class="project-type">FULL STACK / SECURITY</p>
-                <h3>TaskFlow</h3>
-                <div class="project-tags">
-                  <span>Full-Stack</span>
-                  <span>Protected Auth</span>
-                  <span>REST APIs</span>
-                  <span>JWT</span>
+            <article class="product-card reveal" data-category="web security">
+              <div class="product-card-preview preview-web">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">05</span>
+                  <span class="product-category-tag">FULL STACK / AUTH</span>
                 </div>
-              </div>
-              <div class="project-desc-col">
-                <p>A secure task management system designed around dependable workflows and protected user access boundaries.</p>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/Arnab0513/TaskFlow-Secure-Task-Management-System" target="_blank" rel="noopener">GitHub ↗</a>
-              </div>
-            </article>
-
-            <!-- Project 6: Smart Surveillance & Bluetooth-Controlled Robot Car -->
-            <article class="project-card reveal" data-category="iot">
-              <div class="project-number">06</div>
-              <div class="project-main-col">
-                <p class="project-type">IOT / ROBOTICS</p>
-                <h3>Smart Surveillance Robot Car</h3>
-                <div class="project-tags">
-                  <span>ESP32-CAM</span>
-                  <span>Arduino</span>
-                  <span>Embedded C</span>
-                  <span>Bluetooth</span>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
                 </div>
-              </div>
-              <div class="project-desc-col">
-                <p>Developed a Bluetooth-controlled robot car with ESP32-CAM for real-time video streaming, integrating wireless surveillance for remote navigation.</p>
               </div>
               
+              <div class="product-card-body">
+                <h3 class="product-title">TaskFlow Secure</h3>
+                <p class="product-headline">High-resilience task management system with hardened authentication</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Web task managers often leak state, have vulnerable session lifecycles, and risk horizontal privilege escalation.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Built a hardened full-stack application enforcing scoped JWT tokens, cryptographic password hashing, and clean REST endpoints.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Architected strict API middleware, relational session state controls, and defensive sanitize-at-boundary patterns.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Provides a dependable, vulnerability-resistant workspace with seamless multi-user collaboration.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tag-tech-icon"/> Full-Stack</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> JWT Auth</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node" class="tag-tech-icon"/> REST APIs</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> RBAC</span>
+                </div>
+              </div>
+
+              <div class="product-card-footer">
+                <a href="https://github.com/Arnab0513/TaskFlow-Secure-Task-Management-System" target="_blank" rel="noopener" class="product-btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 6: Smart Surveillance & Bluetooth Robot Car -->
+            <article class="product-card reveal" data-category="iot">
+              <div class="product-card-preview preview-iot">
+                <div class="preview-glow"></div>
+                <div class="preview-badge-row">
+                  <span class="product-index-badge">06</span>
+                  <span class="product-category-tag">IOT / ROBOTICS</span>
+                </div>
+                <div class="preview-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect width="16" height="16" x="4" y="4" rx="2"/>
+                    <rect width="6" height="6" x="9" y="9" rx="1"/>
+                    <path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="product-card-body">
+                <h3 class="product-title">Smart Surveillance Robot</h3>
+                <p class="product-headline">Autonomous &amp; Bluetooth-piloted ESP32-CAM wireless reconnaissance vehicle</p>
+                
+                <div class="project-spec-sheet">
+                  <div class="spec-row">
+                    <span class="spec-label red"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Problem</span>
+                    <p class="spec-text">Inspecting hazardous or confined spaces poses severe safety risks for on-site personnel without remote vision.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label green"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Solution</span>
+                    <p class="spec-text">Engineered an agile hardware robot vehicle with real-time video streaming over Wi-Fi/Bluetooth protocols.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label orange"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> How</span>
+                    <p class="spec-text">Programmed ESP32-CAM microcontroller in Embedded C / Arduino to handle low-latency video streaming and motor driver PWM signals.</p>
+                  </div>
+                  <div class="spec-row">
+                    <span class="spec-label blue"><svg class="spec-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Impact</span>
+                    <p class="spec-text">Enables zero-contact remote reconnaissance and environmental monitoring with cost-effective hardware.</p>
+                  </div>
+                </div>
+
+                <div class="product-tags">
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" class="tag-tech-icon"/> ESP32-CAM</span>
+                  <span class="product-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="tag-tech-icon"/> Embedded C</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg> Bluetooth</span>
+                  <span class="product-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-tech-svg"><rect width="16" height="16" x="4" y="4" rx="2"/></svg> Robotics</span>
+                </div>
+              </div>
+
+              <div class="product-card-footer">
+                <span class="product-btn hardware-tag">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+                  <span>Hardware IoT Project</span>
+                </span>
+              </div>
             </article>
           </div>
-
         </div>
       </section>
 
@@ -619,63 +843,103 @@
         </div>
       </section>
 
-      <!-- CONTACT SECTION (DARK EDITORIAL FINALE) -->
+      <!-- CONTACT SECTION (DISTINCT PRODUCT-STYLE FINALE) -->
       <section class="contact-section" id="contact">
+        <div class="contact-ambient-glow" aria-hidden="true"></div>
         <div class="container">
-          <p class="eyebrow contact-eyebrow reveal">06 / LET'S CONNECT</p>
-          <h2 class="contact-title reveal">
-            Have an idea?<br/>
-            <i>Let's make it real.</i>
-          </h2>
-
-          <div class="contact-links-grid reveal">
-            <a class="contact-row-link" id="emailLink" href="mailto:arnab.jana2228@gmail.com">
-              <span class="contact-link-left">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                <span>arnab.jana2228@gmail.com</span>
-              </span>
-              <span class="contact-arrow">↗</span>
-            </a>
-            <a class="contact-row-link" href="https://www.linkedin.com/in/arnab-jana-a439a028b/" target="_blank" rel="noopener">
-              <span class="contact-link-left">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.63 1.63 0 1 0 0-3.26 1.63 1.63 0 0 0 0 3.26m1.4 9.74V10.13H5.06v8.37h2.8z"/>
-                </svg>
-                <span>LinkedIn</span>
-              </span>
-              <span class="contact-arrow">↗</span>
-            </a>
-            <a class="contact-row-link" href="https://github.com/Arnab0513" target="_blank" rel="noopener">
-              <span class="contact-link-left">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
-                </svg>
-                <span>GitHub</span>
-              </span>
-              <span class="contact-arrow">↗</span>
-            </a>
-            <a class="contact-row-link" href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf">
-              <span class="contact-link-left">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span>Download Full Resume (PDF)</span>
-              </span>
-              <span class="contact-arrow">↓</span>
-            </a>
-          </div>
-
-          <div class="contact-bottom reveal">
-            <p>Kolkata, India · Open for global opportunities</p>
-            <div>
-              <a href="https://www.linkedin.com/in/arnab-jana-a439a028b/" target="_blank" rel="noopener" style="margin-right:20px;">LinkedIn ↗</a>
-              <a href="https://github.com/Arnab0513" target="_blank" rel="noopener">GitHub ↗</a>
+          <div class="contact-card-wrapper reveal">
+            <div class="contact-badge-pill">
+              <span class="pulse-status-dot"></span>
+              <span>LET'S CONNECT</span>
             </div>
-            <p>© <span id="year"></span> Arnab Jana</p>
+            
+            <h2 class="contact-title">
+              Have a project in mind?<br/>
+              <i>Let's build something great.</i>
+            </h2>
+            
+            <p class="contact-subtitle">
+              Whether you're looking for an intern, a full-time engineer, or a collaborator on security &amp; AI architectures, my inbox is always open.
+            </p>
+
+            <div class="contact-grid">
+              <!-- Email Card with Opening Envelope Animation -->
+              <a class="contact-box email-contact-box" id="emailLink" href="mailto:arnab.jana2228@gmail.com">
+                <div class="contact-box-icon email-icon-container">
+                  <svg class="anim-mail-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Emerging Letter Sheet (slides up smoothly out of envelope) -->
+                    <g class="mail-letter">
+                      <rect x="5.5" y="4" width="13" height="10" rx="1.5" fill="#FFFFFF" stroke="#EA580C" stroke-width="1.2"/>
+                      <line x1="8" y1="7.5" x2="16" y2="7.5" stroke="#EA580C" stroke-width="1.2"/>
+                      <line x1="8" y1="10.5" x2="14" y2="10.5" stroke="#94A3B8" stroke-width="1.2"/>
+                    </g>
+                    <!-- Envelope Main Body & Front Fold (Classic Clean Mail Outline) -->
+                    <rect class="mail-body" x="2" y="6" width="20" height="14" rx="2.5" fill="#151C2E" stroke="currentColor" stroke-width="1.8"/>
+                    <!-- Diagonal Envelope Crease / Flap Lines -->
+                    <polyline class="mail-fold" points="2,6 12,14 22,6" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </div>
+                <div class="contact-box-content">
+                  <span class="contact-box-label">DIRECT EMAIL</span>
+                  <span class="contact-box-val">arnab.jana2228@gmail.com</span>
+                </div>
+                <span class="contact-box-arrow">&nearr;</span>
+              </a>
+
+              <!-- LinkedIn Card with Pulse Wave Animation -->
+              <a class="contact-box linkedin-contact-box" href="https://www.linkedin.com/in/arnab-jana-a439a028b/" target="_blank" rel="noopener">
+                <div class="contact-box-icon linkedin-icon-container">
+                  <svg class="anim-linkedin-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.63 1.63 0 1 0 0-3.26 1.63 1.63 0 0 0 0 3.26m1.4 9.74V10.13H5.06v8.37h2.8z"/>
+                  </svg>
+                </div>
+                <div class="contact-box-content">
+                  <span class="contact-box-label">PROFESSIONAL NETWORK</span>
+                  <span class="contact-box-val">LinkedIn Profile</span>
+                </div>
+                <span class="contact-box-arrow">&nearr;</span>
+              </a>
+
+              <!-- GitHub Card with Rotating/Bouncing Cat Animation -->
+              <a class="contact-box github-contact-box" href="https://github.com/Arnab0513" target="_blank" rel="noopener">
+                <div class="contact-box-icon github-icon-container">
+                  <svg class="anim-github-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </div>
+                <div class="contact-box-content">
+                  <span class="contact-box-label">SOURCE CODE</span>
+                  <span class="contact-box-val">github.com/Arnab0513</span>
+                </div>
+                <span class="contact-box-arrow">&nearr;</span>
+              </a>
+
+              <!-- Resume Card with Active Download Animation -->
+              <a class="contact-box resume-box resume-contact-box" href="arnab-jana-resume.pdf" download="Arnab-Jana-Resume.pdf">
+                <div class="contact-box-icon download-icon-container">
+                  <svg class="anim-download-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path class="dl-tray" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline class="dl-arrowhead" points="7 10 12 15 17 10"></polyline>
+                    <line class="dl-arrowstem" x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                </div>
+                <div class="contact-box-content">
+                  <span class="contact-box-label">CURRICULUM VITAE</span>
+                  <span class="contact-box-val">Download Resume (PDF)</span>
+                </div>
+                <span class="contact-box-arrow">&darr;</span>
+              </a>
+            </div>
+
+            <div class="contact-footer-bar">
+              <div class="contact-foot-left">
+                <span class="location-dot"></span>
+                <span>Kolkata, WB, India &middot; Available Globally</span>
+              </div>
+              <div class="contact-foot-right">
+                <span>&copy; <span id="year"></span> Arnab Jana. Built with passion &amp; purpose.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
